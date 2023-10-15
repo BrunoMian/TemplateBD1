@@ -57,7 +57,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text]([https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual"](https://github.com/BrunoMian/TemplateBD1/blob/35b2300914a0e0d65badf92d65a88b3ccf491233/Modelo_Conceitual.jpg))
+![Alt text]([https://github.com/BrunoMian/TemplateBD1/blob/35b2300914a0e0d65badf92d65a88b3ccf491233/Modelo_Conceitual.jpg])
     
     
 #### 5.1 Validação do Modelo Conceitual
