@@ -49,7 +49,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     
 ### 5.MODELO CONCEITUAL<br>
         
-![Alt text](https://github.com/BrunoMian/TemplateBD1/blob/35b2300914a0e0d65badf92d65a88b3ccf491233/Modelo_Conceitual.jpg)
+![Alt text](https://github.com/BrunoMian/TemplateBD1/blob/4d411b13d74b40b6f1eaa7114642c8037fd2a5c2/Modelo%40Conceitual.jpg)
     
     
 #### 5.1 Validação do Modelo Conceitual
