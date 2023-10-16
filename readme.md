@@ -48,28 +48,86 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 
     
 ### 5.MODELO CONCEITUAL<br>
-    A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
-    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
-        * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
-    C) Principais fluxos de informação/entidades do sistema (mínimo 3). <br>Dica: normalmente estes fluxos estão associados as tabelas que conterão maior quantidade de dados 
-    D) Qualidade e Clareza
-        Garantir que a semântica dos atributos seja clara no esquema (nomes coerentes com os dados).
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
 ![Alt text](https://github.com/BrunoMian/TemplateBD1/blob/35b2300914a0e0d65badf92d65a88b3ccf491233/Modelo_Conceitual.jpg)
     
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: Emanuel Hoffmann
+    [Grupo02]: Rodolfo Luiz
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
-    
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+	Objeto: PESSOA
+	
+	Descrição: Tabela que armazena as informações relativas a uma pessoa ou corretor.
+	
+	Campos:
+	
+	código: Identificador único da pessoa.
+	nome: Nome da pessoa.
+	endereço: Endereço da pessoa.
+	telefone: Telefone da pessoa.
+	email: Endereço de e-mail da pessoa.
+ 
+	Objeto: CLIENTE
+	
+	Descrição: Tabela que armazena as informações relativas a uma pessoa.
+	
+	Campos:
+	cpf: CPF da pessoa.
+
+ 	Objeto: CORRETOR
+	
+	Descrição: Tabela que armazena as informações relativas a um corretor.
+	
+	Campos:
+	creci: certificado de corretor.
+ 	endereco: localização do corretor.
+  	horario_trabalho: horario de atendimento.
+
+	Objeto: IMÓVEL
+	
+	Descrição: Tabela que armazena as informações relativas a um imóvel.
+	
+	Campos:
+	
+	código: Identificador único do imóvel.
+	tipo: Tipo de imóvel, como "casa", "apartamento", "terreno" ou "comercial".
+	endereco: Endereço do imóvel.
+	área: Área do imóvel.
+	qtd_comodos: Número de quartos do imóvel.
+	qtd_banheiros: Número de banheiros do imóvel.
+	vagas de garagem: Número de vagas de garagem do imóvel.
+	preco: Valor do imóvel.
+
+	Objeto: AGENDAMENTO
+	
+	Descrição: relação que armazena as informações relativas ao agendamento de uma visita a um imóvel.
+	
+	Campos:
+	
+	codigo_agendamento: Identificador único do agendamento.
+	tipo: Tipo de agendamento, como "visita", "contrato" ou "entrega".
+	data: Data do agendamento.
+	hora: Hora do agendamento.
+
+	Relacionamentos:
+	
+	fk_codigo_cliente: Relacionamento com a tabela CLIENTE.
+	fk_codigo_corretor: Relacionamento com a tabela CORRETOR.
+
+ 	Objeto: NEGOCIA
+	
+	Descrição: relação que armazena as informações da negociação do imovel.
+	
+	Campos:
+ 	data: Data da negociação.
+  	metodo_pagamento: formas de pagamento.
+
+ 	codigo_agendamento:
+	fk_codigo_cliente: Relacionamento com a tabela CLIENTE.
+	fk_codigo_corretor: Relacionamento com a tabela CORRETOR.
+  	
 
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
 
