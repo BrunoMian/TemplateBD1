@@ -132,7 +132,8 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
 
 ### 6	MODELO LÓGICO<br>
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/dd955e44-ccd1-48f8-8e9c-d54de15db395)
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/aabcd84b-b71c-4bf3-8e01-46fc79fa4270)
+
 
 ### 7	MODELO FÍSICO<br>
 	CREATE TABLE PESSOA (
