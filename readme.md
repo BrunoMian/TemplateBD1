@@ -142,7 +142,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
    		telefone VARCHAR,
 		endereco VARCHAR,
 		dt_nasc DATE
-    	);
+  	);
 
 	CREATE TABLE CLIENTE (
 		fk_codigoPessoa INTEGER REFERENCES PESSOA,
@@ -154,31 +154,30 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 		creci INTEGER,
 		horarioTrabalho TIME
   	);
-    
-    	CREATE TABLE IMOVEL (
-   		codigoImovel INTEGER PRIMARY KEY,
-    		tipo VARCHAR,
-    		endereco VARCHAR,
-    		preco FLOAT,
-    		qtd_comodos INTEGER,
-    		qtd_banheiros INTEGER,
-    		estado CHAR
-    	);
-    
+   	CREATE TABLE IMOVEL (
+		codigoImovel INTEGER PRIMARY KEY,
+		tipo VARCHAR,
+		endereco VARCHAR,
+		preco FLOAT,
+		qtd_comodos INTEGER,
+		qtd_banheiros INTEGER,
+		estado CHAR
+  	);
+   	
     	CREATE TABLE AGENDAMENTO (
-    		fk_codigoImovel INTEGER REFERENCES IMOVEL,
-    		fk_codigoCliente INTEGER REFERENCES PESSOA,
-    		fk_codigoCorretor INTEGER REFERENCES PESSOA,
-    		hora TIME,
-   		data DATE
-    	);
-    
-    	CREATE TABLE NEGOCIA (
-    		fk_codigoCorretor INTEGER REFERENCES PESSOA,
-    		fk_codigoCliente INTEGER REFERENCES PESSOA,
-    		data DATE,
-    		metodoPagamento VARCHAR
-    	);
+		fk_codigoImovel INTEGER REFERENCES IMOVEL,
+		fk_codigoCliente INTEGER REFERENCES PESSOA,
+		fk_codigoCorretor INTEGER REFERENCES PESSOA,
+		hora TIME,
+		data DATE
+  	);
+   
+   	CREATE TABLE NEGOCIA (
+		fk_codigoCorretor INTEGER REFERENCES PESSOA,
+		fk_codigoCliente INTEGER REFERENCES PESSOA,
+		data DATE,
+		metodoPagamento VARCHAR
+  	);
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
