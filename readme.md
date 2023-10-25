@@ -182,8 +182,8 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-        ALTER TABLE CORRETOR
-	DROP COLUMN horarioTrabalho;
+	ALTER TABLE CORRETOR
+ 	DROP COLUMN horarioTrabalho;
 
 	ALTER TABLE CORRETOR
 	ADD horarioEntrada TIME,
