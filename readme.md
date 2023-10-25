@@ -149,11 +149,11 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 		cpf VARCHAR
 	);
     
-    	CREATE TABLE CORRETOR (
-	    	fk_codigoPessoa INTEGER REFERENCES PESSOA,
-	    	creci INTEGER,
-	    	horarioTrabalho TIME
-    	);
+	CREATE TABLE CORRETOR (
+		fk_codigoPessoa INTEGER REFERENCES PESSOA,
+		creci INTEGER,
+		horarioTrabalho TIME
+	);
     
     	CREATE TABLE IMOVEL (
    		codigoImovel INTEGER PRIMARY KEY,
