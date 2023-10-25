@@ -154,6 +154,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 		creci INTEGER,
 		horarioTrabalho TIME
   	);
+   
    	CREATE TABLE IMOVEL (
 		codigoImovel INTEGER PRIMARY KEY,
 		tipo VARCHAR,
