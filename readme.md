@@ -144,10 +144,10 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     		dt_nasc DATE
     	);
 
-CREATE TABLE CLIENTE (
-	fk_codigoPessoa INTEGER REFERENCES PESSOA,
-	cpf VARCHAR
-);
+	CREATE TABLE CLIENTE (
+		fk_codigoPessoa INTEGER REFERENCES PESSOA,
+		cpf VARCHAR
+	);
     
     	CREATE TABLE CORRETOR (
 	    	fk_codigoPessoa INTEGER REFERENCES PESSOA,
