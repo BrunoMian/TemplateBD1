@@ -246,22 +246,28 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     OBS: Usa template da disciplina disponibilizado no Colab.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
    Tabela Pessoa:
-	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/97307b53-d683-46c9-82a5-df1aeacf050a)
+	
+ 	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/97307b53-d683-46c9-82a5-df1aeacf050a)
 
    Tabela Cliente:
-  	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/63a272be-bbe3-4be0-b415-d09716c12db3)
+  	
+	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/63a272be-bbe3-4be0-b415-d09716c12db3)
    
    Tabela Corretor:
-    	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/0aae9206-c85b-4704-af25-978a06df9a64)
+    	
+     	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/0aae9206-c85b-4704-af25-978a06df9a64)
 
    Tabela Imovel:
-      	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/897d074b-a0ce-4aca-af60-fcebb8f0a4fa)
+      	
+	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/897d074b-a0ce-4aca-af60-fcebb8f0a4fa)
 
    Tabela Agendamento:
-	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/1ff1dfd4-cfea-4eff-884c-9042d380a68c)
+	
+ 	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/1ff1dfd4-cfea-4eff-884c-9042d380a68c)
 
    Tabela Negocia:
-  	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
+  	
+   	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
