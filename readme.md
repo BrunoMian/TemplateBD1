@@ -132,9 +132,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
 
 ### 6	MODELO LÓGICO<br>
-        a) inclusão do esquema lógico do banco de dados
-        b) verificação de correspondencia com o modelo conceitual 
-        (não serão aceitos modelos que não estejam em conformidade)
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/dd955e44-ccd1-48f8-8e9c-d54de15db395)
 
 ### 7	MODELO FÍSICO<br>
 	CREATE TABLE PESSOA (
