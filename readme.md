@@ -164,8 +164,8 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 		qtd_banheiros INTEGER,
 		estado CHAR
   	);
-   	
-    	CREATE TABLE AGENDAMENTO (
+   
+   	CREATE TABLE AGENDAMENTO (
 		fk_codigoImovel INTEGER REFERENCES IMOVEL,
 		fk_codigoCliente INTEGER REFERENCES PESSOA,
 		fk_codigoCorretor INTEGER REFERENCES PESSOA,
