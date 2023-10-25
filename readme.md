@@ -137,23 +137,23 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 
 ### 7	MODELO FÍSICO<br>
 	CREATE TABLE PESSOA (
-		codigoPessoa INTEGER PRIMARY KEY,
+ 		codigoPessoa INTEGER PRIMARY KEY,
 		nome VARCHAR,
    		telefone VARCHAR,
-	endereco VARCHAR,
-	dt_nasc DATE
+		endereco VARCHAR,
+		dt_nasc DATE
     	);
 
 	CREATE TABLE CLIENTE (
 		fk_codigoPessoa INTEGER REFERENCES PESSOA,
 		cpf VARCHAR
 	);
-    
-	CREATE TABLE CORRETOR (
-		fk_codigoPessoa INTEGER REFERENCES PESSOA,
+ 	
+  	CREATE TABLE CORRETOR (
+   		fk_codigoPessoa INTEGER REFERENCES PESSOA,
 		creci INTEGER,
 		horarioTrabalho TIME
-	);
+  	);
     
     	CREATE TABLE IMOVEL (
    		codigoImovel INTEGER PRIMARY KEY,
