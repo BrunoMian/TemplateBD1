@@ -245,6 +245,23 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     OBS: Usa template da disciplina disponibilizado no Colab.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
+	Tabela Pessoa:
+	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/852862d6-c4e3-4573-b203-276b3002a016)
+
+ 	Tabela Cliente:
+  	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/95aec037-c59a-4e48-9c63-ef283a46e42a)
+
+   	Tabela Corretor:
+    	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/61148eb1-79c4-45a0-bfab-7916bbfd5820)
+
+     	Tabela Imovel:
+      	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ffd4e9f8-fc84-4e31-a868-c15b566ab731)
+
+       	Tabela Agendamento:
+	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/62661b3c-a4b5-46d8-be99-ff2f2dda1ccf)
+
+ 	Tabela Negocia:
+  	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/5ffcc9ff-706d-4900-9b1c-d2d1149c17bb)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 
