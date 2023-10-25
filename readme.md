@@ -246,7 +246,10 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     OBS: Usa template da disciplina disponibilizado no Colab.<br>
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 	Tabela Pessoa:
-	![Alt text](https://github.com/BrunoMian/TemplateBD1/blob/3359981ac9c3e36b389c2a7d2b531da104187a7a/tabelaPessoa.jpg)
+	![image](https://github.com/BrunoMian/TemplateBD1/blob/3359981ac9c3e36b389c2a7d2b531da104187a7a/tabelaPessoa.jpg)
+
+ a
+	![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/97307b53-d683-46c9-82a5-df1aeacf050a)
 
 
 
