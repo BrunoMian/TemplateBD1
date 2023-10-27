@@ -270,7 +270,10 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
    ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-
+	pd.read_sql_query("SELECT * FROM PESSOA WHERE DATE_PART('year', age(dt_nasc)) >= 30",conn);
+ 	pd.read_sql_query("SELECT * FROM IMOVEL WHERE ESTADO = 'A venda'",conn);
+  	pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE fk_codigoCorretor = 2 AND data = '2023-10-27'",conn);
+   	pd.read_sql_query("SELECT * FROM CLIENTE WHERE cpf LIKE '1234%'",conn);
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
