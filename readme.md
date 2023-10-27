@@ -270,10 +270,14 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
    ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-	pd.read_sql_query("SELECT * FROM PESSOA WHERE DATE_PART('year', age(dt_nasc)) >= 30",conn);
- 	pd.read_sql_query("SELECT * FROM IMOVEL WHERE ESTADO = 'A venda'",conn);
-  	pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE fk_codigoCorretor = 2 AND data = '2023-10-27'",conn);
-   	pd.read_sql_query("SELECT * FROM CLIENTE WHERE cpf LIKE '1234%'",conn);
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/432a332d-4621-4cbf-8897-2b87589b1c9e)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/8a1ae591-3f0d-4dd6-9d71-26f1c7ee962f)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ed3b2283-42c6-402f-a89f-14451edfcef3)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/6d93e52d-1278-4ae3-adbf-82c0d34d0d1c)
+
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/6b41775f-f43c-471c-939a-fa6cc066f0ad)
