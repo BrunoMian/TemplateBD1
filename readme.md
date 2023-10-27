@@ -285,12 +285,23 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/19059161-8ee5-44a5-b250-f0c393d80f77)
 
 ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/e6c3c35d-3994-4c41-baa4-cfd72e185ee5)
-# Consulta com operador AND para encontrar os agendamentos feitos por clientes 1 ou 3 com data posterior a '2023-10-26' e para imóveis à venda:
+Consulta com operador AND para encontrar os agendamentos feitos por clientes 1 ou 3 com data posterior a '2023-10-26' e para imóveis à venda:
 pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE (fk_codigoCliente = 1 OR fk_codigoCliente = 3) AND data > '2023-10-26' AND fk_codigoImovel IN (SELECT codigoImovel FROM IMOVEL WHERE estado = 'A venda')",conn)
 
-
     b) Criar no mínimo 3 consultas com operadores aritméticos 
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/a97f81e7-3aca-499e-a68c-296ea79fee69)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/66d99cc6-d4bf-40c1-aaa4-6b1fbb425ece)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/eaddbb31-cd6b-4977-87e2-d4cb779dadff)
+
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ec662818-19f8-4f42-bd7a-b47493a5cfa3)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/4a301c8a-78ab-4cdf-bedc-5636c04b4b45)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/5304d85d-0021-4d99-a3f7-5146b0cb3b63)
+
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
