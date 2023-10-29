@@ -310,6 +310,21 @@ pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE (fk_codigoCliente = 1 OR fk_c
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
     b) Criar uma consulta para cada tipo de função data apresentada.
+    
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/13995acd-0f7d-41fc-a2a4-715a64fb233f)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/d93437a4-c2c7-4efb-9d42-257d0a02b3d2)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/4a83d1e9-cc46-4f02-9b72-62ba03044761)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/822ba0b3-a48f-4084-a849-7a1f9978b4fa)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/e0df7945-d22a-4819-9f06-0a14d740419c)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/c83e8ac2-30c9-47b1-8b79-ac7d720ba56a)
+
+![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/40dc9867-3b50-47b1-bcdd-f0bfb0df742f)
+
 
 ># Marco de Entrega 02: Do item 6. até o item 9.1 (5 PTS) <br>
 
