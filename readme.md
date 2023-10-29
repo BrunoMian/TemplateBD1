@@ -309,6 +309,8 @@ pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE (fk_codigoCliente = 1 OR fk_c
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
+
+    
     b) Criar uma consulta para cada tipo de função data apresentada.
     
 ![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/13995acd-0f7d-41fc-a2a4-715a64fb233f)
