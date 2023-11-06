@@ -270,73 +270,30 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
    ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/432a332d-4621-4cbf-8897-2b87589b1c9e)
 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/8a1ae591-3f0d-4dd6-9d71-26f1c7ee962f)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ed3b2283-42c6-402f-a89f-14451edfcef3)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/6d93e52d-1278-4ae3-adbf-82c0d34d0d1c)
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/6b41775f-f43c-471c-939a-fa6cc066f0ad)
 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/4c42e874-f7dd-46b2-8478-7a218dcae3b0)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/a827021a-e0a7-4dec-8523-664eea9e157f)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/19059161-8ee5-44a5-b250-f0c393d80f77)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/e6c3c35d-3994-4c41-baa4-cfd72e185ee5)
 Consulta com operador AND para encontrar os agendamentos feitos por clientes 1 ou 3 com data posterior a '2023-10-26' e para imóveis à venda:
 pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE (fk_codigoCliente = 1 OR fk_codigoCliente = 3) AND data > '2023-10-26' AND fk_codigoImovel IN (SELECT codigoImovel FROM IMOVEL WHERE estado = 'A venda')",conn)
 
     b) Criar no mínimo 3 consultas com operadores aritméticos 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/a97f81e7-3aca-499e-a68c-296ea79fee69)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/66d99cc6-d4bf-40c1-aaa4-6b1fbb425ece)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/eaddbb31-cd6b-4977-87e2-d4cb779dadff)
 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ec662818-19f8-4f42-bd7a-b47493a5cfa3)
 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/4a301c8a-78ab-4cdf-bedc-5636c04b4b45)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/5304d85d-0021-4d99-a3f7-5146b0cb3b63)
 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/bf117e9a-c895-4d2e-a329-79edcc0b6a2d)
 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/8c44fd2e-da87-4b2f-a1b6-bbe980427aab)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/d469fe89-3b43-436c-b8d9-943d508529c4)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/fb700773-9b6c-42c6-a7dd-584999a1c41c)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/e71c880f-7ea4-49e3-b73a-710e22ec25f2)
 
 
 
     b) Criar uma consulta para cada tipo de função data apresentada.
     
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/13995acd-0f7d-41fc-a2a4-715a64fb233f)
 
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/d93437a4-c2c7-4efb-9d42-257d0a02b3d2)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/4a83d1e9-cc46-4f02-9b72-62ba03044761)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/822ba0b3-a48f-4084-a849-7a1f9978b4fa)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/e0df7945-d22a-4819-9f06-0a14d740419c)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/c83e8ac2-30c9-47b1-8b79-ac7d720ba56a)
-
-![image](https://github.com/BrunoMian/TemplateBD1/assets/66493314/40dc9867-3b50-47b1-bcdd-f0bfb0df742f)
 
 
 ># Marco de Entrega 02: Do item 6. até o item 9.1 (5 PTS) <br>
