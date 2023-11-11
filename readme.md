@@ -49,7 +49,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     
 ### 5.MODELO CONCEITUAL<br>
         
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/8382acc3-2c85-4753-92a6-444695fd247c)
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ebe873fd-2091-4be4-8bea-66a980ac1d30)
 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Emanuel Hoffmann
@@ -123,8 +123,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
 
 ### 6	MODELO LÓGICO<br>
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/aabcd84b-b71c-4bf3-8e01-46fc79fa4270)
-
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/eeb9448f-17e9-433b-ba60-2dd4d267a5b1)
 
 ### 7	MODELO FÍSICO<br>
 	CREATE TABLE PESSOA (
