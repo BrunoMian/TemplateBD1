@@ -49,83 +49,75 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     
 ### 5.MODELO CONCEITUAL<br>
         
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/4907b2fe-bb2d-4dd2-a926-161e31fa3c7b)
- 
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/8382acc3-2c85-4753-92a6-444695fd247c)
+
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Emanuel Hoffmann
     [Grupo02]: Rodolfo Luiz
 
 #### 5.2 Descrição dos dados 
 	Objeto: PESSOA
-	
 	Descrição: Tabela que armazena as informações relativas a uma pessoa ou corretor.
-	
 	Campos:
-	
-	código: Identificador único da pessoa.
-	nome: Nome da pessoa.
-	endereço: Endereço da pessoa.
-	telefone: Telefone da pessoa.
-	email: Endereço de e-mail da pessoa.
+		código: Identificador único da pessoa.
+		nome: Nome da pessoa.
+		endereço: Endereço da pessoa.
+  		dt_nasc: Data de nascimento da PESSOA
+
+  	Objeto: CONTATO
+   	Descrição: Tabela que armazena os contatos de PESSOA.
+    	Campos:
+     		codigo: Identificador único de CONTATO
+       		email: email da PESSOA
+	 	telefone: telefone da PESSOA
  
 	Objeto: CLIENTE
-	
 	Descrição: Tabela que armazena as informações relativas a uma pessoa.
-	
 	Campos:
-	cpf: CPF da pessoa.
+		cpf: CPF da pessoa.
 
  	Objeto: CORRETOR
-	
 	Descrição: Tabela que armazena as informações relativas a um corretor.
-	
 	Campos:
-	creci: certificado de corretor.
- 	endereco: localização do corretor.
-  	horario_trabalho: horario de atendimento.
+		creci: certificado de corretor.
+	  	horario_trabalho: horario de atendimento.
 
 	Objeto: IMÓVEL
-	
 	Descrição: Tabela que armazena as informações relativas a um imóvel.
-	
 	Campos:
-	
-	código: Identificador único do imóvel.
-	tipo: Tipo de imóvel, como "casa", "apartamento", "terreno" ou "comercial".
-	endereco: Endereço do imóvel.
-	área: Área do imóvel.
-	qtd_comodos: Número de quartos do imóvel.
-	qtd_banheiros: Número de banheiros do imóvel.
-	vagas de garagem: Número de vagas de garagem do imóvel.
-	preco: Valor do imóvel.
+		código: Identificador único do imóvel.
+		tipo: Tipo de imóvel, como "casa", "apartamento".
+		endereco: Endereço do imóvel.
+		preco: Valor do imóvel.
+	 	estado: Se o imóvel ja foi vendido ou não.
 
+   	Objeto: CARACTERISTICA
+    	Descrição: Tabela que armazena caracteristicas de um imovel, como quantidade de quartos, banheiros e 		garagens, churrasqueira, piscina, área de serviço, etc.
+	Campos:
+ 		codigo: Identificador único de imóvel.
+   		tipo: Tipo de caracteristica
+
+     	Objeto: PAGAMENTO
+      	Descrição: Tabela que armazena as formas de pagamento, como dinheiro, financiamento, cheque, etc.
+       	Campos:
+		codigo: Identificador único de PAGAMENTO
+  		tipo: Tipo de pagamento
+
+     	Objeto: POSSUI
+      	Descrição: Relacão que armazena a quatidade de uma caracteristicas de um imovel.
+       	Campos:
+		qtd: Quantidade de uma caracteristicas de um imovel.
+     
 	Objeto: AGENDAMENTO
-	
 	Descrição: relação que armazena as informações relativas ao agendamento de uma visita a um imóvel.
-	
 	Campos:
-	
-	codigo_agendamento: Identificador único do agendamento.
-	tipo: Tipo de agendamento, como "visita", "contrato" ou "entrega".
-	data: Data do agendamento.
-	hora: Hora do agendamento.
-
-	Relacionamentos:
-	
-	fk_codigo_cliente: Relacionamento com a tabela CLIENTE.
-	fk_codigo_corretor: Relacionamento com a tabela CORRETOR.
+		data: Data do agendamento.
+		hora: Hora do agendamento.
 
  	Objeto: NEGOCIA
-	
 	Descrição: relação que armazena as informações da negociação do imovel.
-	
 	Campos:
- 	data: Data da negociação.
-  	metodo_pagamento: formas de pagamento.
-
- 	codigo_agendamento:
-	fk_codigo_cliente: Relacionamento com a tabela CLIENTE.
-	fk_codigo_corretor: Relacionamento com a tabela CORRETOR.
+ 		data: Data da negociação.
   	
 
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
