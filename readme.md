@@ -67,8 +67,8 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
   	Objeto: CONTATO
    	Descrição: Tabela que armazena os contatos de PESSOA.
     	Campos:
-     		codigo: Identificador único de CONTATO
-       		email: email da PESSOA
+     	codigo: Identificador único de CONTATO
+       	email: email da PESSOA
 	 	telefone: telefone da PESSOA
  
 	Objeto: CLIENTE
