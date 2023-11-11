@@ -49,9 +49,8 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     
 ### 5.MODELO CONCEITUAL<br>
         
-![Alt text](https://github.com/BrunoMian/TemplateBD1/blob/3359981ac9c3e36b389c2a7d2b531da104187a7a/Modelo_Conceitual.jpg)
-    
-    
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/4907b2fe-bb2d-4dd2-a926-161e31fa3c7b)
+ 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Emanuel Hoffmann
     [Grupo02]: Rodolfo Luiz
