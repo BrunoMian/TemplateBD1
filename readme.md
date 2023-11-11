@@ -92,20 +92,20 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 	 	estado: Se o imóvel ja foi vendido ou não.
 
    	Objeto: CARACTERISTICA
-    	Descrição: Tabela que armazena caracteristicas de um imovel, como quantidade de quartos, banheiros e garagens, churrasqueira, piscina, área de serviço, etc.
+    Descrição: Tabela que armazena caracteristicas de um imovel, como quantidade de quartos, banheiros e garagens, churrasqueira, piscina, área de serviço, etc.
 	Campos:
  		codigo: Identificador único de imóvel.
    		tipo: Tipo de caracteristica
 
-     	Objeto: PAGAMENTO
-      	Descrição: Tabela que armazena as formas de pagamento, como dinheiro, financiamento, cheque, etc.
-       	Campos:
+	Objeto: PAGAMENTO
+	Descrição: Tabela que armazena as formas de pagamento, como dinheiro, financiamento, cheque, etc.
+	Campos:
 		codigo: Identificador único de PAGAMENTO
-  		tipo: Tipo de pagamento
-
-     	Objeto: POSSUI
-      	Descrição: Relacão que armazena a quatidade de uma caracteristicas de um imovel.
-       	Campos:
+		tipo: Tipo de pagamento
+	
+	Objeto: POSSUI
+	Descrição: Relacão que armazena a quatidade de uma caracteristicas de um imovel.
+	Campos:
 		qtd: Quantidade de uma caracteristicas de um imovel.
      
 	Objeto: AGENDAMENTO
