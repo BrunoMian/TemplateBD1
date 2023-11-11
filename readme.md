@@ -92,7 +92,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 	 	estado: Se o imóvel ja foi vendido ou não.
 
    	Objeto: CARACTERISTICA
-    	Descrição: Tabela que armazena caracteristicas de um imovel, como quantidade de quartos, banheiros e 		garagens, churrasqueira, piscina, área de serviço, etc.
+    	Descrição: Tabela que armazena caracteristicas de um imovel, como quantidade de quartos, banheiros e garagens, churrasqueira, piscina, área de serviço, etc.
 	Campos:
  		codigo: Identificador único de imóvel.
    		tipo: Tipo de caracteristica
