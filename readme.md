@@ -58,105 +58,105 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
 #### 5.2 Descrição dos dados 
 Vamos lá!
 
-**Objeto:** PESSOA
-**Descrição:** Tabela que armazena as informações relativas a uma pessoa ou corretor.
-**Campos:**
-- **código:** Identificador único da pessoa.
-- **nome:** Nome da pessoa.
-- **endereço:** Endereço da pessoa.
-- **dt_nasc:** Data de nascimento da pessoa.
+**Objeto:** PESSOA <br>
+**Descrição:** Tabela que armazena as informações relativas a uma pessoa ou corretor.<br>
+**Campos:**<br>
+- **código:** Identificador único da pessoa.<br>
+- **nome:** Nome da pessoa.<br>
+- **endereço:** Endereço da pessoa.<br>
+- **dt_nasc:** Data de nascimento da pessoa.<br>
 
 ---
 
-**Objeto:** CLIENTE
-**Descrição:** Tabela que relaciona um cliente à tabela de PESSOA e armazena seu CPF.
-**Campos:**
-- **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.
-- **cpf:** Número de CPF do cliente.
+**Objeto:** CLIENTE <br>
+**Descrição:** Tabela que relaciona um cliente à tabela de PESSOA e armazena seu CPF.<br>
+**Campos:**<br>
+- **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.<br>
+- **cpf:** Número de CPF do cliente.<br>
 
 ---
 
-**Objeto:** CORRETOR
-**Descrição:** Tabela que relaciona um corretor à tabela de PESSOA e armazena seu horário de trabalho e número CRECI.
+**Objeto:** CORRETOR <br>
+**Descrição:** Tabela que relaciona um corretor à tabela de PESSOA e armazena seu horário de trabalho e número CRECI.<br>
 **Campos:**
-- **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.
-- **horario_trabalho:** Horário de trabalho do corretor.
-- **creci:** Número de registro do corretor no CRECI.
+- **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.<br>
+- **horario_trabalho:** Horário de trabalho do corretor.<br>
+- **creci:** Número de registro do corretor no CRECI.<br>
 
 ---
 
-**Objeto:** CONTATO
-**Descrição:** Tabela que armazena informações de contato, como email e telefone.
-**Campos:**
-- **codigo:** Identificador único do contato.
-- **email:** Endereço de email.
-- **telefone:** Número de telefone.
+**Objeto:** CONTATO <br>
+**Descrição:** Tabela que armazena informações de contato, como email e telefone.<br>
+**Campos:**<br>
+- **codigo:** Identificador único do contato.<br>
+- **email:** Endereço de email.<br>
+- **telefone:** Número de telefone.<br>
 
 ---
 
-**Objeto:** PESSOA_CONTATO
-**Descrição:** Tabela de associação entre PESSOA e CONTATO para registrar os contatos de uma pessoa.
-**Campos:**
-- **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.
-- **fk_contato:** Chave estrangeira referenciando a tabela CONTATO.
+**Objeto:** PESSOA_CONTATO <br>
+**Descrição:** Tabela de associação entre PESSOA e CONTATO para registrar os contatos de uma pessoa.<br>
+**Campos:**<br>
+- **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.<br>
+- **fk_contato:** Chave estrangeira referenciando a tabela CONTATO.<br>
 
 ---
 
-**Objeto:** IMOVEL
-**Descrição:** Tabela que armazena informações sobre imóveis disponíveis.
-**Campos:**
-- **codigo:** Identificador único do imóvel.
-- **tipo:** Tipo do imóvel.
-- **endereço:** Endereço do imóvel.
-- **preco:** Preço do imóvel.
-- **estado:** Estado do imóvel.
+**Objeto:** IMOVEL <br>
+**Descrição:** Tabela que armazena informações sobre imóveis disponíveis.<br>
+**Campos:**<br>
+- **codigo:** Identificador único do imóvel.<br>
+- **tipo:** Tipo do imóvel.<br>
+- **endereço:** Endereço do imóvel.<br>
+- **preco:** Preço do imóvel.<br>
+- **estado:** Estado do imóvel.<br>
 
 ---
 
-**Objeto:** AGENDAMENTO
-**Descrição:** Tabela que registra os agendamentos entre cliente, corretor e imóvel.
-**Campos:**
-- **fk_cliente:** Chave estrangeira referenciando a tabela PESSOA para o cliente.
-- **fk_corretor:** Chave estrangeira referenciando a tabela PESSOA para o corretor.
-- **fk_imovel:** Chave estrangeira referenciando a tabela IMOVEL.
-- **hora:** Hora do agendamento.
-- **data:** Data do agendamento.
+**Objeto:** AGENDAMENTO <br>
+**Descrição:** Tabela que registra os agendamentos entre cliente, corretor e imóvel.<br>
+**Campos:**<br>
+- **fk_cliente:** Chave estrangeira referenciando a tabela PESSOA para o cliente.<br>
+- **fk_corretor:** Chave estrangeira referenciando a tabela PESSOA para o corretor.<br>
+- **fk_imovel:** Chave estrangeira referenciando a tabela IMOVEL.<br>
+- **hora:** Hora do agendamento.<br>
+- **data:** Data do agendamento.<br>
 
 ---
 
-**Objeto:** INFRAESTRUTURA
-**Descrição:** Tabela que descreve as características dos imóveis.
-**Campos:**
-- **codigo:** Identificador único da característica.
-- **caracteristica:** comodos, banheiros, vagas, lazer.
+**Objeto:** INFRAESTRUTURA <br>
+**Descrição:** Tabela que descreve as características dos imóveis.<br>
+**Campos:**<br>
+- **codigo:** Identificador único da característica.<br>
+- **caracteristica:** comodos, banheiros, vagas, lazer.<br>
 
 ---
 
-**Objeto:** POSSUI
-**Descrição:** Tabela de associação entre IMOVEL e CARACTERISTICA para registrar as características de um imóvel.
-**Campos:**
-- **fk_imovel:** Chave estrangeira referenciando a tabela IMOVEL.
-- **fk_caracteristica:** Chave estrangeira referenciando a tabela CARACTERISTICA.
-- **qtd:** Quantidade da característica no imóvel.
+**Objeto:** POSSUI <br>
+**Descrição:** Tabela de associação entre IMOVEL e CARACTERISTICA para registrar as características de um imóvel.<br>
+**Campos:**<br>
+- **fk_imovel:** Chave estrangeira referenciando a tabela IMOVEL.<br>
+- **fk_caracteristica:** Chave estrangeira referenciando a tabela CARACTERISTICA.<br>
+- **qtd:** Quantidade da característica no imóvel.<br>
 
 ---
 
-**Objeto:** PAGAMENTO
-**Descrição:** Tabela que descreve os tipos de pagamento disponíveis.
-**Campos:**
-- **codigo:** Identificador único do tipo de pagamento.
-- **tipo:** Descrição do tipo de pagamento.
+**Objeto:** PAGAMENTO <br>
+**Descrição:** Tabela que descreve os tipos de pagamento disponíveis.<br>
+**Campos:**<br>
+- **codigo:** Identificador único do tipo de pagamento.<br>
+- **tipo:** Descrição do tipo de pagamento.<br>
 
 ---
 
-**Objeto:** NEGOCIA
-**Descrição:** Tabela que registra as negociações entre cliente, corretor, imóvel e tipo de pagamento.
-**Campos:**
-- **fk_cliente:** Chave estrangeira referenciando a tabela PESSOA para o cliente.
-- **fk_corretor:** Chave estrangeira referenciando a tabela PESSOA para o corretor.
-- **fk_imovel:** Chave estrangeira referenciando a tabela IMOVEL.
-- **fk_pagamento:** Chave estrangeira referenciando a tabela PAGAMENTO.
-- **data:** Data da negociação.
+**Objeto:** NEGOCIA <br>
+**Descrição:** Tabela que registra as negociações entre cliente, corretor, imóvel e tipo de pagamento.<br>
+**Campos:**<br>
+- **fk_cliente:** Chave estrangeira referenciando a tabela PESSOA para o cliente.<br>
+- **fk_corretor:** Chave estrangeira referenciando a tabela PESSOA para o corretor.<br>
+- **fk_imovel:** Chave estrangeira referenciando a tabela IMOVEL.<br>
+- **fk_pagamento:** Chave estrangeira referenciando a tabela PAGAMENTO.<br>
+- **data:** Data da negociação.<br>
   	
 
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
