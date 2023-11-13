@@ -49,7 +49,7 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     
 ### 5.MODELO CONCEITUAL<br>
         
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/f544ae98-477d-4fd9-a37a-0665b4f06180)
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/31f7836d-09e1-4cce-bd04-bd189377d7ff)
 
 #### 5.1 Validação do Modelo Conceitual
     [Grupo01]: Emanuel Hoffmann
@@ -80,7 +80,8 @@ Vamos lá!
 **Descrição:** Tabela que relaciona um corretor à tabela de PESSOA e armazena seu horário de trabalho e número CRECI.<br>
 **Campos:**
 - **fk_pessoa:** Chave estrangeira referenciando a tabela PESSOA.<br>
-- **horario_trabalho:** Horário de trabalho do corretor.<br>
+- **horario_entrada:** Horário de entrada do corretor.<br>
+- **horario_saida:** Horário de saida do corretor.<br>
 - **creci:** Número de registro do corretor no CRECI.<br>
 
 ---
@@ -162,7 +163,7 @@ Vamos lá!
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
 
 ### 6	MODELO LÓGICO<br>
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/76884b22-45a8-4520-8280-6adb145b1e39)
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/7b5e1ac3-27f7-41d0-9f0b-9cf124f8d3e5)
 
 ### 7	MODELO FÍSICO<br>
 	CREATE TABLE PESSOA (
