@@ -299,7 +299,17 @@ Vamos lá!
    ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+Selecionar todos os imóveis à venda (estado = 'A venda') com preço superior a 200.000:
+	SELECT * FROM IMOVEL WHERE estado = 'A venda' AND preco > 200000.00;
 
+Selecionar todas as infraestruturas que não são garagem:
+	SELECT * FROM INFRAESTRUTURA WHERE caracteristica <> 'Garagem';
+
+Selecionar todas as casas à venda (estado = 'A venda'):
+	SELECT * FROM IMOVEL WHERE tipo = 'Casa' AND estado = 'A venda';
+
+Selecionar todas as negociações onde o pagamento não foi feito em dinheiro:
+	SELECT * FROM NEGOCIA WHERE fk_pagamento <> (SELECT codigo FROM PAGAMENTO WHERE tipo = 'Dinheiro');
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
