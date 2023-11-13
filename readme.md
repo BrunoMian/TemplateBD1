@@ -328,29 +328,50 @@ Vamos lá!
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
     https://colab.research.google.com/drive/1uyCQHk16mCX3FwYYE9oBz0srjMWgMNf_?usp=sharing
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-   Tabela Pessoa:
+	# Inserir dados na tabela PESSOA
+	select = pd.read_sql_query("select * from PESSOA", conn)
+	select
 	
-   ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/97307b53-d683-46c9-82a5-df1aeacf050a)
-
-   Tabela Cliente:
-  	
-   ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/63a272be-bbe3-4be0-b415-d09716c12db3)
-   
-   Tabela Corretor:
-    	
-   ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/0aae9206-c85b-4704-af25-978a06df9a64)
-
-   Tabela Imovel:
-      	
-   ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/897d074b-a0ce-4aca-af60-fcebb8f0a4fa)
-
-   Tabela Agendamento:
+	# Inserir dados na tabela CLIENTE
+	select = pd.read_sql_query("select * from CLIENTE", conn)
+	select
 	
-   ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/1ff1dfd4-cfea-4eff-884c-9042d380a68c)
+	Tabela Corretor:
+	# Inserir dados na tabela CORRETOR
+	select = pd.read_sql_query("select * from CORRETOR", conn)
+	select
+	
+	# Inserir dados na tabela CONTATO
+	select = pd.read_sql_query("select * from CONTATO", conn)
+	select
 
-   Tabela Negocia:
-  	
-   ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/72798fa5-3f35-4415-b10f-b1204d65e312)
+ 	# Inserir dados na tabela PESSOA_CONTATO
+	select = pd.read_sql_query("select * from PESSOA_CONTATO", conn)
+	select
+
+ 	# Inserir dados na tabela PAGAMENTO
+	select = pd.read_sql_query("select * from PAGAMENTO", conn)
+	select
+
+    	# Inserir dados na tabela IMOVEL
+	select = pd.read_sql_query("select * from IMOVEL", conn)
+	select
+
+  	# Inserir dados na tabela INFRAESTRUTURA
+	select = pd.read_sql_query("select * from INFRAESTRUTURA", conn)
+	select
+
+ 	# Inserir dados na tabela POSSUI
+	select = pd.read_sql_query("select * from POSSUI", conn)
+	select
+
+ 	# Inserir dados na tabela NEGOCIA
+	select = pd.read_sql_query("select * from NEGOCIA", conn)
+	select
+
+ 	# Inserir dados na tabela AGENDAMENTO
+	select = pd.read_sql_query("select * from AGENDAMENTO", conn)
+	select
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 	Selecionar todos os imóveis à venda (estado = 'A venda') com preço superior a 200.000:
