@@ -162,7 +162,7 @@ Vamos lá!
 ># Marco de Entrega 01: Do item 1 até o item 5.2 (5 PTS) <br> 
 
 ### 6	MODELO LÓGICO<br>
-![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/ba34eee7-1d1d-4275-845b-e821a5a24c2a)
+![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/76884b22-45a8-4520-8280-6adb145b1e39)
 
 ### 7	MODELO FÍSICO<br>
 	CREATE TABLE PESSOA (
