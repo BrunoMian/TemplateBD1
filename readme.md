@@ -352,8 +352,8 @@ Vamos lá!
  	# Inserir dados na tabela PAGAMENTO
 	select = pd.read_sql_query("select * from PAGAMENTO", conn)
 	select
-
-    	# Inserir dados na tabela IMOVEL
+ 
+ 	# Inserir dados na tabela IMOVEL
 	select = pd.read_sql_query("select * from IMOVEL", conn)
 	select
 
