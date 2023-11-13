@@ -181,7 +181,7 @@ Vamos lá!
   	CREATE TABLE CORRETOR (
    		fk_codigoPessoa INTEGER REFERENCES PESSOA,
 		creci INTEGER,
-		horarioTrabalho TIME
+		horarioTrabalho VARCHAR
   	);
    
    	CREATE TABLE IMOVEL (
