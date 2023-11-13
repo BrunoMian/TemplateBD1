@@ -166,49 +166,75 @@ Vamos lá!
 ![image](https://github.com/BrunoMian/TemplateBD1/assets/69252647/7b5e1ac3-27f7-41d0-9f0b-9cf124f8d3e5)
 
 ### 7	MODELO FÍSICO<br>
-	CREATE TABLE PESSOA (
- 		codigoPessoa INTEGER PRIMARY KEY,
-		nome VARCHAR,
-   		telefone VARCHAR,
-		endereco VARCHAR,
-		dt_nasc DATE
-  	);
+    CREATE TABLE PESSOA (
+	codigo INTEGER PRIMARY KEY,
+	nome VARCHAR(255),
+	endereco VARCHAR(255),
+	dt_nasc DATE
+    );
 
-	CREATE TABLE CLIENTE (
-		fk_codigoPessoa INTEGER REFERENCES PESSOA,
-		cpf VARCHAR
-	);
- 	
-  	CREATE TABLE CORRETOR (
-   		fk_codigoPessoa INTEGER REFERENCES PESSOA,
-		creci INTEGER,
-		horarioTrabalho VARCHAR
-  	);
-   
-   	CREATE TABLE IMOVEL (
-		codigoImovel INTEGER PRIMARY KEY,
-		tipo VARCHAR,
-		endereco VARCHAR,
-		preco FLOAT,
-		qtd_comodos INTEGER,
-		qtd_banheiros INTEGER,
-		estado CHAR
-  	);
+    CREATE TABLE CLIENTE (
+	fk_Pessoa INTEGER REFERENCES PESSOA(codigo),
+	cpf VARCHAR(11)
+    );
 
-	CREATE TABLE AGENDAMENTO (
-		fk_codigoImovel INTEGER REFERENCES IMOVEL,
-		fk_codigoCliente INTEGER REFERENCES PESSOA,
-		fk_codigoCorretor INTEGER REFERENCES PESSOA,
-		hora TIME,
-		data DATE
-  	);
-   
-   	CREATE TABLE NEGOCIA (
-		fk_codigoCorretor INTEGER REFERENCES PESSOA,
-		fk_codigoCliente INTEGER REFERENCES PESSOA,
-		data DATE,
-		metodoPagamento VARCHAR
-  	);
+    CREATE TABLE CORRETOR (
+        fk_Pessoa INTEGER REFERENCES PESSOA(codigo),
+        creci INTEGER,
+        horario_entrada TIME,
+	horario_saida TIME
+    );
+
+    CREATE TABLE CONTATO (
+	codigo INTEGER PRIMARY KEY,
+	email VARCHAR(100),
+	telefone VARCHAR(13);
+    );
+
+    CREATE TABLE PESSOA_CONTATO (
+	fk_pessoa INTEGER REFERENCES PESSOA(codigo),
+	fk_contato INTEGER REFERENCES CONTATO(codigo)
+    );
+
+    CREATE TABLE IMOVEL (
+        codigo INTEGER PRIMARY KEY,
+        tipo VARCHAR(25),
+        endereco VARCHAR(255),
+        preco FLOAT,
+        estado VARCHAR(15)
+    );
+
+    CREATE TABLE AGENDAMENTO (
+        fk_Imovel INTEGER REFERENCES IMOVEL(Imovel),
+        fk_Cliente INTEGER REFERENCES PESSOA(Pessoa),
+        fk_Corretor INTEGER REFERENCES PESSOA(Pessoa),
+        hora TIME,
+        data DATE
+    );
+
+    CREATE TABLE INFRAESTRURURA (
+        codigo INTEGER PRIMARY KEY,
+        caracteristica VARCHAR(255)
+    );
+
+    CREATE TABLE POSSUI (
+        fk_imovel INTEGER REFERENCES IMOVEL(codigo),
+        fk_infraestrutura INTEGER REFERENCES INFRAESTRUTURA(codigo),
+        qtd INTEGER
+    );
+
+    CREATE TABLE PAGAMENTO (
+        codigo INTEGER PRIMARY KEY,
+        tipo VARCHAR(255)
+    );
+
+    CREATE TABLE NEGOCIA (
+        fk_cliente INTEGER REFERENCES PESSOA(codigo),
+        fk_corretor INTEGER REFERENCES PESSOA(codigo),
+        fk_imovel INTEGER REFERENCES PESSOA(codigo),
+        fk_pagamento INTEGER REFERENCES PAGAMENTO(codigo),
+        data DATE
+    );
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
