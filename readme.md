@@ -368,9 +368,6 @@ Vamos lá!
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 
-Consulta com operador AND para encontrar os agendamentos feitos por clientes 1 ou 3 com data posterior a '2023-10-26' e para imóveis à venda:
-pd.read_sql_query("SELECT * FROM AGENDAMENTO WHERE (fk_codigoCliente = 1 OR fk_codigoCliente = 3) AND data > '2023-10-26' AND fk_codigoImovel IN (SELECT codigoImovel FROM IMOVEL WHERE estado = 'A venda')",conn)
-
     b) Criar no mínimo 3 consultas com operadores aritméticos 
 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
