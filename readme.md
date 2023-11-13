@@ -238,62 +238,89 @@ Vamos lá!
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
-	ALTER TABLE CORRETOR
- 	DROP COLUMN horarioTrabalho;
-
-	ALTER TABLE CORRETOR
-	ADD horarioEntrada TIME,
-	ADD horarioSaida TIME;
-
 	ALTER TABLE IMOVEL
 	DROP COLUMN ESTADO;
-
+	
 	ALTER TABLE IMOVEL
-	ADD ESTADO VARCHAR,
-
-	INSERT INTO PESSOA (codigoPessoa, nome, telefone, endereco, dt_nasc)
-	VALUES
-	    (1, 'Bruno', '123-456-7890', 'Rua A, 1234', '1990-01-01'),
-	    (2, 'Arthur', '987-654-3210', 'Rua B, 21', '1985-02-15'),
-	    (3, 'Thalison', '555-555-5555', 'Rua C 114', '1988-07-20'),
-	    (4, 'Maria', '111-222-3333', 'Rua D 121', '1995-03-10'),
-	    (5, 'João', '222-333-4444', 'Rua E 235', '1977-12-05');
-
-	INSERT INTO CLIENTE (fk_codigoPessoa, cpf)
-	VALUES 
-	    (1, '12345678901');
-	    (3, '98765432109');
-	    (4, '11122233344');
+	ADD ESTADO VARCHAR;
 	
-	INSERT INTO CORRETOR (fk_codigoPessoa, creci, horarioEntrada, horarioSaida)
-	VALUES 
-	    (5, '123456', '09:00:00', '18:00:00'),
-	    (2, '789123', '08:00:00', '17:00:00');
+	ALTER TABLE INFRAESTRUTURA
+	DROP COLUMN CARACTERISTICA;
 	
-	INSERT INTO IMOVEL (codigoImovel, tipo, endereco, preco, qtd_comodos, qtd_banheiros, estado)
-	VALUES
-	    (1, 'Casa', 'Rua A, 123', 250000.00, 4, 2, 'A venda'),
-	    (2, 'Apartamento', 'Av. B, 456', 180000.00, 2, 1, 'A venda'),
-	    (3, 'Casa', 'Rua C, 789', 350000.00, 5, 3, 'Vendido'),
-	    (4, 'Apartamento', 'Av. D, 101', 200000.00, 3, 2, 'A venda'),
-	    (5, 'Casa', 'Rua E, 111', 300000.00, 4, 2, 'A venda');
+	ALTER TABLE INFRAESTRUTURA
+	ADD PROPRIEDADE VARCHAR;
+
+	INSERT INTO PESSOA (codigo, nome, endereco, dt_nasc) VALUES
+		(1, 'João Silva', 'Rua A, 123', '1990-05-15'),
+		(2, 'Maria Santos', 'Av B, 456', '1985-08-20'),
+		(3, 'Carlos Oliveira', 'Rua C, 789', '1982-03-10'),
+		(4, 'Ana Souza', 'Av D, 321', '1995-12-05'),
+		(5, 'Pedro Rocha', 'Rua E, 567', '1988-07-25');
 	
-	INSERT INTO AGENDAMENTO (fk_codigoImovel, fk_codigoCliente, fk_codigoCorretor, hora, data)
-	VALUES
-	    (1, 3, 2, '10:00:00', '2023-10-25'),
-	    (2, 1, 5, '14:30:00', '2023-10-26'),
-	    (3, 4, 2, '11:15:00', '2023-10-27'),
-	    (4, 4, 2, '15:00:00', '2023-10-28'),
-	    (5, 1, 5, '13:45:00', '2023-10-29');
-
-	INSERT INTO NEGOCIA (fk_codigoCorretor, fk_codigoCliente, data, metodoPagamento)
-	VALUES
-	    (2, 3, '2023-10-25', 'Financiamento'),
-	    (5, 1, '2023-10-26', 'À vista'),
-	    (2, 4, '2023-10-27', 'Financiamento'),
-	    (2, 4, '2023-10-28', 'Cheque'),
-	    (5, 1, '2023-10-29', 'Cartão de Crédito');
-
+	INSERT INTO CORRETOR (fk_Pessoa, creci, horario_entrada, horario_saida) VALUES
+		(1, 12345, '09:00:00', '18:00:00'),
+		(3, 67890, '10:00:00', '17:30:00');
+	
+	INSERT INTO CLIENTE (fk_Pessoa, cpf) VALUES
+		(2, '12345678901'),
+		(4, '98765432109'),
+		(5, '34567890123');
+	
+	INSERT INTO CONTATO (codigo, email, telefone) VALUES
+		(1, 'joao.silva@email.com', '+55 123456789'),
+		(2, 'maria.santos@email.com', '+55 987654321'),
+		(3, 'carlos.oliveira@email.com', '+55 111223344'),
+		(4, 'ana.souza@email.com', '+55 554433322'),
+		(5, 'pedro.rocha@email.com', '+55 998877665');
+	
+	INSERT INTO PESSOA_CONTATO (fk_pessoa, fk_contato) VALUES
+		(1, 1),
+		(2, 2),
+		(3, 3),
+		(4, 4),
+		(5, 5);
+	
+	INSERT INTO IMOVEL (codigo, tipo, endereco, preco, estado) VALUES
+		(1, 'Casa', 'Rua F, 789', 250000.00, 'A venda'),
+		(2, 'Apartamento', 'Av G, 456', 180000.00, 'A venda'),
+		(3, 'Casa', 'Rua H, 123', 300000.00, 'A venda'),
+		(4, 'Apartamento', 'Av I, 789', 200000.00, 'Vendido'),
+		(5, 'Casa', 'Rua J, 456', 280000.00, 'A venda');
+	
+	INSERT INTO AGENDAMENTO (fk_Imovel, fk_Cliente, fk_Corretor, hora, data) VALUES
+		(1, 2, 1, '10:00', '2023-11-15'),
+		(2, 4, 3, '14:30', '2023-11-17'),
+		(3, 5, 3, '11:00', '2023-11-16'),
+		(4, 5, 1, '15:00', '2023-11-18'),
+		(5, 2, 3, '09:30', '2023-11-19');
+	
+	INSERT INTO INFRAESTRUTURA (codigo, caracteristica) VALUES
+		(1, 'Piscina'),
+		(2, 'Garagem'),
+		(3, 'Academia'),
+		(4, 'Varanda'),
+		(5, 'Jardim');
+	
+	INSERT INTO POSSUI (fk_imovel, fk_infraestrutura, qtd) VALUES
+		(1, 2, 1),
+		(2, 4, 1),
+		(3, 1, 1),
+		(4, 3, 1),
+		(5, 2, 1);
+	
+	INSERT INTO PAGAMENTO (codigo, tipo) VALUES
+		(1, 'Dinheiro'),
+		(2, 'Financiamento'),
+		(3, 'Transferência Bancária'),
+		(4, 'Cheque'),
+		(5, 'Cartão de Crédito');
+	
+	INSERT INTO NEGOCIA (fk_cliente, fk_corretor, fk_imovel, fk_pagamento, data) VALUES
+		(2, 1, 1, 5, '2023-11-16'),
+		(4, 3, 2, 2, '2023-11-18'),
+		(5, 2, 3, 1, '2023-11-17'),
+		(3, 1, 4, 3, '2023-11-19'),
+		(1, 3, 5, 4, '2023-11-20');
 
 	2) script deve ser incluso no template em um arquivo no formato .SQL
 
