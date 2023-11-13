@@ -390,49 +390,49 @@ Vamos lá!
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 
 	# Selecionar todas as pessoas que têm um endereço cadastrado e nasceram antes de 1990:
-	consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL AND EXTRACT(YEAR FROM dt_nasc) < 1990;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL AND EXTRACT(YEAR FROM dt_nasc) < 1990;", conn)
+		consulta
 
  	# Selecionar todas as pessoas que têm um endereço cadastrado e nasceram antes de 1990:
-	consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE CONDICAO = 'A venda' AND preco > 250000;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE CONDICAO = 'A venda' AND preco > 250000;", conn)
+		consulta
 
  	# Selecionar todas as negociações concluidas com pagamento em dinheiro ou por transferencia bancária
-	consulta = pd.read_sql_query("SELECT * FROM NEGOCIA WHERE (fk_pagamento IN (SELECT codigo FROM PAGAMENTO WHERE tipo IN ('Dinheiro', 'Transferência Bancária')));", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT * FROM NEGOCIA WHERE (fk_pagamento IN (SELECT codigo FROM PAGAMENTO WHERE tipo IN ('Dinheiro', 'Transferência Bancária')));", conn)
+		consulta
 	
  	# Selecionar todas as pessoas que têm um endereço cadastrado
-	consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL;", conn)
+		consulta
 
   	# Selecionar todos os imóveis que não possuem infraestrutura de academia:
-	consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE codigo NOT IN (SELECT fk_imovel FROM POSSUI WHERE fk_infraestrutura IN (SELECT codigo FROM INFRAESTRUTURA WHERE propriedade = 'Academia'));", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE codigo NOT IN (SELECT fk_imovel FROM POSSUI WHERE fk_infraestrutura IN (SELECT codigo FROM INFRAESTRUTURA WHERE propriedade = 'Academia'));", conn)
+		consulta
 
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     
 	# Calcular o valor total pago em negociações considerando um imposto de 5%:
-	consulta = pd.read_sql_query("SELECT SUM(preco) + SUM(preco * 0.05) AS valor_total_com_imposto FROM NEGOCIA JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT SUM(preco) + SUM(preco * 0.05) AS valor_total_com_imposto FROM NEGOCIA JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo;", conn)
+		consulta
 	
 	# Calcular o desconto de 20% no preço dos imóveis à venda e o novo preço com desconto:
-	consulta = pd.read_sql_query("SELECT codigo, tipo, preco, preco * 0.20 AS desconto, preco - (preco * 0.20) AS preco_com_desconto FROM IMOVEL WHERE condicao = 'A venda';", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT codigo, tipo, preco, preco * 0.20 AS desconto, preco - (preco * 0.20) AS preco_com_desconto FROM IMOVEL WHERE condicao = 'A venda';", conn)
+		consulta
 	
 	# Calcular a diferença de preço entre o imóvel mais caro e o mais barato:
-	consulta = pd.read_sql_query("SELECT MAX(preco) AS preco_maximo, MIN(preco) AS preco_minimo, MAX(preco) - MIN(preco) AS diferenca_preco FROM IMOVEL;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT MAX(preco) AS preco_maximo, MIN(preco) AS preco_minimo, MAX(preco) - MIN(preco) AS diferenca_preco FROM IMOVEL;", conn)
+		consulta
 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
 
-	consulta = pd.read_sql_query("SELECT nome AS nome_cliente FROM PESSOA;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT nome AS nome_cliente FROM PESSOA;", conn)
+		consulta
 	
-	consulta = pd.read_sql_query("SELECT p.nome, c.cpf FROM CLIENTE c JOIN PESSOA p ON c.fk_Pessoa = p.codigo;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT p.nome, c.cpf FROM CLIENTE c JOIN PESSOA p ON c.fk_Pessoa = p.codigo;", conn)
+		consulta
 	
-	consulta = pd.read_sql_query("SELECT endereco AS localizacao, preco * 0.9 AS preco_com_desconto FROM IMOVEL;", conn)
-	consulta
+		consulta = pd.read_sql_query("SELECT endereco AS localizacao, preco * 0.9 AS preco_com_desconto FROM IMOVEL;", conn)
+		consulta
 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
