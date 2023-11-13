@@ -389,6 +389,26 @@ Vamos lá!
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 
+	# Selecionar todas as pessoas que têm um endereço cadastrado e nasceram antes de 1990:
+	consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL AND EXTRACT(YEAR FROM dt_nasc) < 1990;", conn)
+	consulta
+
+ 	# Selecionar todas as pessoas que têm um endereço cadastrado e nasceram antes de 1990:
+	consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE CONDICAO = 'A venda' AND preco > 250000;", conn)
+	consulta
+
+ 	# Selecionar todas as negociações concluidas com pagamento em dinheiro ou por transferencia bancária
+	consulta = pd.read_sql_query("SELECT * FROM NEGOCIA WHERE (fk_pagamento IN (SELECT codigo FROM PAGAMENTO WHERE tipo IN ('Dinheiro', 'Transferência Bancária')));", conn)
+	consulta
+	
+ 	# Selecionar todas as pessoas que têm um endereço cadastrado
+	consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL;", conn)
+	consulta
+
+  	# Selecionar todos os imóveis que não possuem infraestrutura de academia:
+	consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE codigo NOT IN (SELECT fk_imovel FROM POSSUI WHERE fk_infraestrutura IN (SELECT codigo FROM INFRAESTRUTURA WHERE propriedade = 'Academia'));", conn)
+	consulta
+
     b) Criar no mínimo 3 consultas com operadores aritméticos 
 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
