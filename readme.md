@@ -451,11 +451,90 @@ Vamos lá!
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
+
+	cur.execute("DELETE FROM NEGOCIA WHERE fk_cliente = 3")
+
+	# Excluir uma negociação em relação a um corretor
+	cur.execute("DELETE FROM NEGOCIA WHERE fk_corretor = 2")
+	
+	# Excluir um contato e a relação com uma pessoa:
+	cur.execute("DELETE FROM CONTATO WHERE codigo = 2;")
+	
     b) Criar minimo 3 de atualização
+
+	# Atualizar a característica de uma infraestrutura:
+	cur.execute("UPDATE INFRAESTRUTURA SET propriedade = 'Área de serviço' WHERE codigo = 1;")
+	
+	# Atualizar o preço de um imóvel:
+	cur.execute("UPDATE IMOVEL SET preco = 300000.00 WHERE codigo = 3;")
+	
+	#Atualizar o tipo de um imóvel para 'Casa':
+	cur.execute("UPDATE IMOVEL SET tipo = 'Casa' WHERE codigo = 1;")
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
+	result = pd.read_sql_query("""
+		SELECT *
+		FROM PESSOA
+		INNER JOIN CLIENTE ON PESSOA.codigo = CLIENTE.fk_Pessoa
+		INNER JOIN CORRETOR ON PESSOA.codigo = CORRETOR.fk_Pessoa
+		INNER JOIN PESSOA_CONTATO ON PESSOA.codigo = PESSOA_CONTATO.fk_pessoa
+		INNER JOIN CONTATO ON PESSOA_CONTATO.fk_contato = CONTATO.codigo
+		INNER JOIN NEGOCIA ON PESSOA.codigo = NEGOCIA.fk_cliente
+		INNER JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo
+		WHERE PESSOA.codigo IN (1, 2)
+		ORDER BY PESSOA.codigo;
+		""",conn)
+	result
+	
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+
+	# Junção entre PESSOA, PESSOA_CONTATO e CONTATO:
+	result = pd.read_sql_query("""
+		SELECT PESSOA.codigo, PESSOA.nome, CONTATO.email
+		FROM PESSOA
+		INNER JOIN PESSOA_CONTATO ON PESSOA.codigo = PESSOA_CONTATO.fk_pessoa
+		INNER JOIN CONTATO ON PESSOA_CONTATO.fk_contato = CONTATO.codigo;
+		""",conn)
+	result
+	
+	# Listar agendamentos e ordenar por data e hora em ordem crescente:
+	result = pd.read_sql_query("""
+		SELECT AGENDAMENTO.fk_Imovel, AGENDAMENTO.fk_Cliente, AGENDAMENTO.fk_Corretor, AGENDAMENTO.hora, AGENDAMENTO.data
+		FROM AGENDAMENTO
+		ORDER BY AGENDAMENTO.data ASC, AGENDAMENTO.hora ASC;
+		""",conn)
+	result
+	
+	# Listar infraestruturas, imóveis e ordenar por característica em ordem alfabética:
+	result = pd.read_sql_query("""
+		SELECT INFRAESTRUTURA.propriedade, IMOVEL.tipo
+		FROM INFRAESTRUTURA
+		INNER JOIN POSSUI ON INFRAESTRUTURA.codigo = POSSUI.fk_infraestrutura
+		INNER JOIN IMOVEL ON POSSUI.fk_imovel = IMOVEL.codigo
+		ORDER BY INFRAESTRUTURA.propriedade ASC;
+		""",conn)
+	result
+	
+	# Listar imóveis, infraestruturas e ordenar por preço do imóvel em ordem crescente:
+	result = pd.read_sql_query("""
+		SELECT IMOVEL.tipo, INFRAESTRUTURA.propriedade, IMOVEL.preco
+		FROM IMOVEL
+		INNER JOIN POSSUI ON IMOVEL.codigo = POSSUI.fk_imovel
+		INNER JOIN INFRAESTRUTURA ON POSSUI.fk_infraestrutura = INFRAESTRUTURA.codigo
+		ORDER BY IMOVEL.preco ASC;
+		""",conn)
+	result
+	
+	# Listar pessoas, clientes, negociações e ordenar por nome da pessoa em ordem alfabética:
+	result = pd.read_sql_query("""
+		SELECT PESSOA.nome, CLIENTE.cpf, NEGOCIA.data
+		FROM PESSOA
+		INNER JOIN CLIENTE ON PESSOA.codigo = CLIENTE.fk_Pessoa
+		INNER JOIN NEGOCIA ON CLIENTE.fk_Pessoa = NEGOCIA.fk_cliente
+		ORDER BY PESSOA.nome ASC;
+		""",conn)
+	result
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
     a) Criar minimo 2 envolvendo algum tipo de junção
