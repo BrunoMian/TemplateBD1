@@ -436,10 +436,45 @@ Vamos lá!
 
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-	# Pessoas nascidas em agosto
-	result = pd.read_sql_query("""SELECT * FROM PESSOA WHERE EXTRACT(MONTH FROM dt_nasc) = 8""",conn)
+	# Imoveis do tipo apartamento, sendo maiúscula ou minuscula 
+	result = pd.read_sql_query("SELECT * FROM IMOVEL WHERE tipo ILIKE 'Apartamento%';", conn)
+ 
+ 	# Pessoas que começam com o nome 'Maria':
+  	result = pd.read_sql_query("SELECT * FROM PESSOA WHERE nome LIKE 'Maria%';", conn)
+   
+	# Imoveis com endereço começando com 'Av':
+ 	result = pd.read_sql_query("SELECT * FROM IMOVEL WHERE endereco LIKE 'Av%';", conn)
+  
+	# Cliente que contem CPF começando com '12':
+ 	result = pd.read_sql_query("SELECT * FROM CLIENTE WHERE cpf LIKE '12%';", conn)
+  
+	# Contatos que contem email terminando em '.com'
+ 	result = pd.read_sql_query("SELECT * FROM CONTATO WHERE email LIKE '%.com';", conn)
+  
+  	# Propriedades com que contem 'ci', sendo maiúscula ou minuscula
+   	result = pd.read_sql_query("SELECT * FROM INFRAESTRUTURA WHERE PROPRIEDADE ILIKE '%ci%';", conn)
+    
+  	# Pessoas com nome contendo 'a':
+   	result = pd.read_sql_query("SELECT * FROM PESSOA WHERE nome LIKE '%a%';", conn)
+    
+    	# extrai o numrero correspondente ao dia da semana cotando a partir de 0 - domingo
+     	result = pd.read_sql_query("SELECT EXTRACT(DOW FROM data) AS dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-16'",conn)
+      
+	# extrai o nome correspondente ao dia da semana cotando a partir de 0 - domingo
+	result = pd.read_sql_query("SELECT TO_CHAR(data, 'Day') AS nome_dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-18'",conn)
 
+ 	# Extrai os dias da semana de todos os agendamentos
+	result = pd.read_sql_query(""" SELECT fk_imovel, fk_cliente, fk_corretor, EXTRACT(DOW FROM data) AS dia_semana 		FROM AGENDAMENTO """,conn)
+ 
+	# seleciona linhas que contem a data 2023-11-17 
+	result = pd.read_sql_query(""" SELECT * FROM AGENDAMENTO WHERE data = '2023-11-17'""",conn)
+ 
+ 	# Pessoas que nasceram no mes 8 (Agosto)
+        result = pd.read_sql_query("""SELECT * FROM PESSOA WHERE EXTRACT(MONTH FROM dt_nasc""",conn) = 8
+""",conn)
 
+ 
+ 
 
 
     b) Criar uma consulta para cada tipo de função data apresentada.
