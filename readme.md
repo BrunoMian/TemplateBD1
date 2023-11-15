@@ -437,7 +437,13 @@ Vamos lá!
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
     a) Criar outras 5 consultas que envolvam like ou ilike
-
+#"Pessoas nascidas em agosto"
+	result = pd.read_sql_query("""
+	    SELECT *
+	    FROM PESSOA
+	    WHERE EXTRACT(MONTH FROM dt_nasc) = 8
+	""",conn)
+	result
 
 
 
