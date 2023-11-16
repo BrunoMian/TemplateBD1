@@ -572,7 +572,74 @@ Vamos lá!
 	result
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
+	# Contagem de Negociações por Tipo de Imóvel:
+   	result = pd.read_sql_query("""
+		SELECT IMOVEL.tipo, COUNT(NEGOCIA.fk_imovel) AS total_negociacoes
+		FROM IMOVEL, NEGOCIA
+		WHERE IMOVEL.codigo = NEGOCIA.fk_imovel
+		GROUP BY IMOVEL.tipo;
+		""",conn)
+	result
+ 
+	# Média de Preços por Condição do Imóvel:
+	result = pd.read_sql_query("""
+		SELECT IMOVEL.condicao, AVG(IMOVEL.preco) AS media_preco
+		FROM IMOVEL
+		GROUP BY IMOVEL.condicao;
+		""",conn)
+	result
+
+  	# Contagem de Negociações por Tipo de Pagamento:
+ 	result = pd.read_sql_query("""
+		SELECT PAGAMENTO.tipo, COUNT(NEGOCIA.fk_pagamento) AS total_negociacoes
+		FROM PAGAMENTO INNER JOIN NEGOCIA ON PAGAMENTO.codigo = NEGOCIA.fk_pagamento
+		GROUP BY PAGAMENTO.tipo;
+		""",conn)
+	result
+
+  	#Contagem de Agendamentos por Tipo de Imóvel e Data:
+	result = pd.read_sql_query("""
+		SELECT IMOVEL.tipo, AGENDAMENTO.data AS Data_Marcada, COUNT(AGENDAMENTO.fk_Imovel) AS total_agendamentos
+		FROM AGENDAMENTO INNER JOIN IMOVEL ON AGENDAMENTO.fk_Imovel = IMOVEL.codigo
+		GROUP BY IMOVEL.tipo, AGENDAMENTO.data;
+		""",conn)
+	result
+
+	#Contagem de Pessoas (Corretores e Clientes):
+ 	result = pd.read_sql_query("""SELECT 'Total Pessoas' AS Categoria,
+		    CASE
+		        WHEN fk_Pessoa IN (SELECT fk_Pessoa FROM CORRETOR) THEN 'Corretor'
+		        WHEN fk_Pessoa IN (SELECT fk_Pessoa FROM CLIENTE) THEN 'Cliente'
+		        ELSE 'Outro'
+		    END AS Tipo_Pessoa,
+		    COUNT(DISTINCT fk_Pessoa) AS total_pessoas
+		FROM
+		    (
+		        SELECT fk_Pessoa FROM CORRETOR
+		        UNION
+		        SELECT fk_Pessoa FROM CLIENTE
+		    ) AS Pessoas
+		GROUP BY
+		    Tipo_Pessoa;
+		""",conn)
+	result
+ 
+	# Contagem de Imóveis com Piscina por Tipo:
+	 result = pd.read_sql_query("""
+		SELECT
+		    IMOVEL.tipo AS Tipo_Imovel,
+		    COUNT(IMOVEL.codigo) AS total_imoveis_com_piscina
+		FROM IMOVEL
+		    INNER JOIN POSSUI ON IMOVEL.codigo = POSSUI.fk_imovel
+		    INNER JOIN INFRAESTRUTURA ON POSSUI.fk_infraestrutura = INFRAESTRUTURA.codigo
+		WHERE
+		    INFRAESTRUTURA.propriedade = 'Piscina'
+		GROUP BY
+		    IMOVEL.tipo
+		ORDER BY
+		    Tipo_Imovel;
+		""",conn)
+	result
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
