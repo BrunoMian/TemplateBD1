@@ -299,14 +299,24 @@ Vamos lá!
 		(2, 'Garagem'),
 		(3, 'Academia'),
 		(4, 'Varanda'),
-		(5, 'Jardim');
+		(5, 'Jardim'),
+  		(6, 'Banheiro'),
+    		(7, 'Quarto'),
+      		(8, 'Sala de Estar'),
+		(9, 'Despensa');
 	
 	INSERT INTO POSSUI (fk_imovel, fk_infraestrutura, qtd) VALUES
 		(1, 2, 1),
 		(2, 4, 1),
 		(3, 1, 1),
 		(4, 3, 1),
-		(5, 2, 1);
+		(5, 2, 1),
+		(1, 6, 1),
+		(2, 7, 2),
+		(3, 8, 1),
+		(4, 9, 1),
+		(5, 6, 1),
+		(5, 8, 1);
 	
 	INSERT INTO PAGAMENTO (codigo, tipo) VALUES
 		(1, 'Dinheiro'),
@@ -316,11 +326,13 @@ Vamos lá!
 		(5, 'Cartão de Crédito');
 	
 	INSERT INTO NEGOCIA (fk_cliente, fk_corretor, fk_imovel, fk_pagamento, data) VALUES
-		(2, 1, 1, 5, '2023-11-16'),
+		(1, 2, 4, 3, '2023-11-21'),
 		(4, 3, 2, 2, '2023-11-18'),
 		(5, 2, 3, 1, '2023-11-17'),
-		(3, 1, 4, 3, '2023-11-19'),
-		(1, 3, 5, 4, '2023-11-20');
+  		(4, 3, 5, 1, '2023-11-22'),
+    		(5, 2, 2, 4, '2023-11-23'),
+      		(1, 3, 1, 2, '2023-11-24'),
+		(4, 2, 3, 5, '2023-11-25');
 
 	2) script deve ser incluso no template em um arquivo no formato .SQL
 
