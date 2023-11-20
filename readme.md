@@ -341,49 +341,38 @@ Vamos lá!
     https://colab.research.google.com/drive/1uyCQHk16mCX3FwYYE9oBz0srjMWgMNf_?usp=sharing
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 	# Inserir dados na tabela PESSOA
-	select = pd.read_sql_query("select * from PESSOA", conn)
-	select
+	Select * from PESSOA
 	
 	# Inserir dados na tabela CLIENTE
-	select = pd.read_sql_query("select * from CLIENTE", conn)
-	select
+	Select * from CLIENTE
 	
 	Tabela Corretor:
 	# Inserir dados na tabela CORRETOR
-	select = pd.read_sql_query("select * from CORRETOR", conn)
-	select
+	Select * from CORRETOR
 	
 	# Inserir dados na tabela CONTATO
-	select = pd.read_sql_query("select * from CONTATO", conn)
-	select
+	Select * from CONTATO
 
  	# Inserir dados na tabela PESSOA_CONTATO
-	select = pd.read_sql_query("select * from PESSOA_CONTATO", conn)
-	select
+	Select * from PESSOA_CONTATO
 
  	# Inserir dados na tabela PAGAMENTO
-	select = pd.read_sql_query("select * from PAGAMENTO", conn)
-	select
+	Select * from PAGAMENTO
  
  	# Inserir dados na tabela IMOVEL
-	select = pd.read_sql_query("select * from IMOVEL", conn)
-	select
+	Select * from IMOVEL
 
   	# Inserir dados na tabela INFRAESTRUTURA
-	select = pd.read_sql_query("select * from INFRAESTRUTURA", conn)
-	select
+	Select * from INFRAESTRUTURA
 
  	# Inserir dados na tabela POSSUI
-	select = pd.read_sql_query("select * from POSSUI", conn)
-	select
+	Select * from POSSUI
 
  	# Inserir dados na tabela NEGOCIA
-	select = pd.read_sql_query("select * from NEGOCIA", conn)
-	select
+	Select * from NEGOCIA
 
  	# Inserir dados na tabela AGENDAMENTO
-	select = pd.read_sql_query("select * from AGENDAMENTO", conn)
-	select
+	Select * from AGENDAMENTO
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 	Selecionar todos os imóveis à venda (estado = 'A venda') com preço superior a 200.000:
@@ -402,88 +391,76 @@ Vamos lá!
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 
 	# Selecionar todas as pessoas que têm um endereço cadastrado e nasceram antes de 1990:
-		consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL AND EXTRACT(YEAR FROM dt_nasc) < 1990;", conn)
-		consulta
+		SELECT * FROM PESSOA WHERE endereco IS NOT NULL AND EXTRACT(YEAR FROM dt_nasc) < 1990;
 
  	# Selecionar todas as pessoas que têm um endereço cadastrado e nasceram antes de 1990:
-		consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE CONDICAO = 'A venda' AND preco > 250000;", conn)
-		consulta
+		SELECT * FROM IMOVEL WHERE CONDICAO = 'A venda' AND preco > 250000;
 
  	# Selecionar todas as negociações concluidas com pagamento em dinheiro ou por transferencia bancária
-		consulta = pd.read_sql_query("SELECT * FROM NEGOCIA WHERE (fk_pagamento IN (SELECT codigo FROM PAGAMENTO WHERE tipo IN ('Dinheiro', 'Transferência Bancária')));", conn)
-		consulta
+		SELECT * FROM NEGOCIA WHERE (fk_pagamento IN (SELECT codigo FROM PAGAMENTO WHERE tipo IN ('Dinheiro', 'Transferência Bancária')));
 	
  	# Selecionar todas as pessoas que têm um endereço cadastrado
-		consulta = pd.read_sql_query("SELECT * FROM PESSOA WHERE endereco IS NOT NULL;", conn)
-		consulta
+		SELECT * FROM PESSOA WHERE endereco IS NOT NULL;
 
   	# Selecionar todos os imóveis que não possuem infraestrutura de academia:
-		consulta = pd.read_sql_query("SELECT * FROM IMOVEL WHERE codigo NOT IN (SELECT fk_imovel FROM POSSUI WHERE fk_infraestrutura IN (SELECT codigo FROM INFRAESTRUTURA WHERE propriedade = 'Academia'));", conn)
-		consulta
+		SELECT * FROM IMOVEL WHERE codigo NOT IN (SELECT fk_imovel FROM POSSUI WHERE fk_infraestrutura IN (SELECT codigo FROM INFRAESTRUTURA WHERE propriedade = 'Academia'));
 
     b) Criar no mínimo 3 consultas com operadores aritméticos 
     
 	# Calcular o valor total pago em negociações considerando um imposto de 5%:
-		consulta = pd.read_sql_query("SELECT SUM(preco) + SUM(preco * 0.05) AS valor_total_com_imposto FROM NEGOCIA JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo;", conn)
-		consulta
+		SELECT SUM(preco) + SUM(preco * 0.05) AS valor_total_com_imposto FROM NEGOCIA JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo;
 	
 	# Calcular o desconto de 20% no preço dos imóveis à venda e o novo preço com desconto:
-		consulta = pd.read_sql_query("SELECT codigo, tipo, preco, preco * 0.20 AS desconto, preco - (preco * 0.20) AS preco_com_desconto FROM IMOVEL WHERE condicao = 'A venda';", conn)
-		consulta
+		SELECT codigo, tipo, preco, preco * 0.20 AS desconto, preco - (preco * 0.20) AS preco_com_desconto FROM IMOVEL WHERE condicao = 'A venda';
 	
 	# Calcular a diferença de preço entre o imóvel mais caro e o mais barato:
-		consulta = pd.read_sql_query("SELECT MAX(preco) AS preco_maximo, MIN(preco) AS preco_minimo, MAX(preco) - MIN(preco) AS diferenca_preco FROM IMOVEL;", conn)
-		consulta
+		SELECT MAX(preco) AS preco_maximo, MIN(preco) AS preco_minimo, MAX(preco) - MIN(preco) AS diferenca_preco FROM IMOVEL;
 
     c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
 
-		consulta = pd.read_sql_query("SELECT nome AS nome_cliente FROM PESSOA;", conn)
-		consulta
+		SELECT nome AS nome_cliente FROM PESSOA;"
 	
-		consulta = pd.read_sql_query("SELECT p.nome, c.cpf FROM CLIENTE c JOIN PESSOA p ON c.fk_Pessoa = p.codigo;", conn)
-		consulta
+		SELECT p.nome, c.cpf FROM CLIENTE c JOIN PESSOA p ON c.fk_Pessoa = p.codigo;
 	
-		consulta = pd.read_sql_query("SELECT endereco AS localizacao, preco * 0.9 AS preco_com_desconto FROM IMOVEL;", conn)
-		consulta
-
+		SELECT endereco AS localizacao, preco * 0.9 AS preco_com_desconto FROM IMOVEL;
 
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 	# Imoveis do tipo apartamento, sendo maiúscula ou minuscula 
-	result = pd.read_sql_query("SELECT * FROM IMOVEL WHERE tipo ILIKE 'Apartamento%';", conn)
+	SELECT * FROM IMOVEL WHERE tipo ILIKE 'Apartamento%';
  
  	# Pessoas que começam com o nome 'Maria':
-  	result = pd.read_sql_query("SELECT * FROM PESSOA WHERE nome LIKE 'Maria%';", conn)
+  	SELECT * FROM PESSOA WHERE nome LIKE 'Maria%';
    
 	# Imoveis com endereço começando com 'Av':
- 	result = pd.read_sql_query("SELECT * FROM IMOVEL WHERE endereco LIKE 'Av%';", conn)
+ 	SELECT * FROM IMOVEL WHERE endereco LIKE 'Av%';
   
 	# Cliente que contem CPF começando com '12':
- 	result = pd.read_sql_query("SELECT * FROM CLIENTE WHERE cpf LIKE '12%';", conn)
+ 	SELECT * FROM CLIENTE WHERE cpf LIKE '12%';
   
 	# Contatos que contem email terminando em '.com'
- 	result = pd.read_sql_query("SELECT * FROM CONTATO WHERE email LIKE '%.com';", conn)
+ 	SELECT * FROM CONTATO WHERE email LIKE '%.com';
   
   	# Propriedades com que contem 'ci', sendo maiúscula ou minuscula
-   	result = pd.read_sql_query("SELECT * FROM INFRAESTRUTURA WHERE PROPRIEDADE ILIKE '%ci%';", conn)
+   	SELECT * FROM INFRAESTRUTURA WHERE PROPRIEDADE ILIKE '%ci%';
     
   	# Pessoas com nome contendo 'a':
-   	result = pd.read_sql_query("SELECT * FROM PESSOA WHERE nome LIKE '%a%';", conn)
+   	SELECT * FROM PESSOA WHERE nome LIKE '%a%';
     
     	# extrai o numrero correspondente ao dia da semana cotando a partir de 0 - domingo
-     	result = pd.read_sql_query("SELECT EXTRACT(DOW FROM data) AS dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-16'",conn)
+     	SELECT EXTRACT(DOW FROM data) AS dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-16'
       
 	# extrai o nome correspondente ao dia da semana cotando a partir de 0 - domingo
-	result = pd.read_sql_query("SELECT TO_CHAR(data, 'Day') AS nome_dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-18'",conn)
+	SELECT TO_CHAR(data, 'Day') AS nome_dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-18'
 
  	# Extrai os dias da semana de todos os agendamentos
-	result = pd.read_sql_query(""" SELECT fk_imovel, fk_cliente, fk_corretor, EXTRACT(DOW FROM data) AS dia_semana 		FROM AGENDAMENTO """,conn)
+	SELECT fk_imovel, fk_cliente, fk_corretor, EXTRACT(DOW FROM data) AS dia_semana 	FROM AGENDAMENTO
  
 	# seleciona linhas que contem a data 2023-11-17 
-	result = pd.read_sql_query(""" SELECT * FROM AGENDAMENTO WHERE data = '2023-11-17'""",conn)
+	SELECT * FROM AGENDAMENTO WHERE data = '2023-11-17'
  
  	# Pessoas que nasceram no mes 8 (Agosto)
-        result = pd.read_sql_query("""SELECT * FROM PESSOA WHERE EXTRACT(MONTH FROM dt_nasc""",conn) = 8
-""",conn)
+        SELECT * FROM PESSOA WHERE EXTRACT(MONTH FROM dt_nasc) = 8
+
 
  
  
@@ -499,28 +476,27 @@ Vamos lá!
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
 
-	cur.execute("DELETE FROM NEGOCIA WHERE fk_cliente = 3")
+	DELETE FROM NEGOCIA WHERE fk_cliente = 3
 
 	# Excluir uma negociação em relação a um corretor
-	cur.execute("DELETE FROM NEGOCIA WHERE fk_corretor = 2")
+	DELETE FROM NEGOCIA WHERE fk_corretor = 2
 	
 	# Excluir um contato e a relação com uma pessoa:
-	cur.execute("DELETE FROM CONTATO WHERE codigo = 2;")
+	DELETE FROM CONTATO WHERE codigo = 2;
 	
     b) Criar minimo 3 de atualização
 
 	# Atualizar a característica de uma infraestrutura:
-	cur.execute("UPDATE INFRAESTRUTURA SET propriedade = 'Área de serviço' WHERE codigo = 1;")
+	UPDATE INFRAESTRUTURA SET propriedade = 'Área de serviço' WHERE codigo = 1;
 	
 	# Atualizar o preço de um imóvel:
-	cur.execute("UPDATE IMOVEL SET preco = 300000.00 WHERE codigo = 3;")
+	UPDATE IMOVEL SET preco = 300000.00 WHERE codigo = 3;
 	
 	#Atualizar o tipo de um imóvel para 'Casa':
-	cur.execute("UPDATE IMOVEL SET tipo = 'Casa' WHERE codigo = 1;")
+	UPDATE IMOVEL SET tipo = 'Casa' WHERE codigo = 1
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-	result = pd.read_sql_query("""
 		SELECT *
 		FROM PESSOA
 		INNER JOIN CLIENTE ON PESSOA.codigo = CLIENTE.fk_Pessoa
@@ -531,94 +507,65 @@ Vamos lá!
 		INNER JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo
 		WHERE PESSOA.codigo IN (1, 2)
 		ORDER BY PESSOA.codigo;
-		""",conn)
-	result
 	
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 
 	# Junção entre PESSOA, PESSOA_CONTATO e CONTATO:
-	result = pd.read_sql_query("""
 		SELECT PESSOA.codigo, PESSOA.nome, CONTATO.email
 		FROM PESSOA
 		INNER JOIN PESSOA_CONTATO ON PESSOA.codigo = PESSOA_CONTATO.fk_pessoa
 		INNER JOIN CONTATO ON PESSOA_CONTATO.fk_contato = CONTATO.codigo;
-		""",conn)
-	result
 	
 	# Listar agendamentos e ordenar por data e hora em ordem crescente:
-	result = pd.read_sql_query("""
 		SELECT AGENDAMENTO.fk_Imovel, AGENDAMENTO.fk_Cliente, AGENDAMENTO.fk_Corretor, AGENDAMENTO.hora, AGENDAMENTO.data
 		FROM AGENDAMENTO
 		ORDER BY AGENDAMENTO.data ASC, AGENDAMENTO.hora ASC;
-		""",conn)
-	result
 	
 	# Listar infraestruturas, imóveis e ordenar por característica em ordem alfabética:
-	result = pd.read_sql_query("""
 		SELECT INFRAESTRUTURA.propriedade, IMOVEL.tipo
 		FROM INFRAESTRUTURA
 		INNER JOIN POSSUI ON INFRAESTRUTURA.codigo = POSSUI.fk_infraestrutura
 		INNER JOIN IMOVEL ON POSSUI.fk_imovel = IMOVEL.codigo
 		ORDER BY INFRAESTRUTURA.propriedade ASC;
-		""",conn)
-	result
 	
 	# Listar imóveis, infraestruturas e ordenar por preço do imóvel em ordem crescente:
-	result = pd.read_sql_query("""
 		SELECT IMOVEL.tipo, INFRAESTRUTURA.propriedade, IMOVEL.preco
 		FROM IMOVEL
 		INNER JOIN POSSUI ON IMOVEL.codigo = POSSUI.fk_imovel
 		INNER JOIN INFRAESTRUTURA ON POSSUI.fk_infraestrutura = INFRAESTRUTURA.codigo
 		ORDER BY IMOVEL.preco ASC;
-		""",conn)
-	result
 	
 	# Listar pessoas, clientes, negociações e ordenar por nome da pessoa em ordem alfabética:
-	result = pd.read_sql_query("""
 		SELECT PESSOA.nome, CLIENTE.cpf, NEGOCIA.data
 		FROM PESSOA
 		INNER JOIN CLIENTE ON PESSOA.codigo = CLIENTE.fk_Pessoa
 		INNER JOIN NEGOCIA ON CLIENTE.fk_Pessoa = NEGOCIA.fk_cliente
 		ORDER BY PESSOA.nome ASC;
-		""",conn)
-	result
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
 	# Contagem de Negociações por Tipo de Imóvel:
-   	result = pd.read_sql_query("""
 		SELECT IMOVEL.tipo, COUNT(NEGOCIA.fk_imovel) AS total_negociacoes
 		FROM IMOVEL, NEGOCIA
 		WHERE IMOVEL.codigo = NEGOCIA.fk_imovel
 		GROUP BY IMOVEL.tipo;
-		""",conn)
-	result
  
 	# Média de Preços por Condição do Imóvel:
-	result = pd.read_sql_query("""
 		SELECT IMOVEL.condicao, AVG(IMOVEL.preco) AS media_preco
 		FROM IMOVEL
 		GROUP BY IMOVEL.condicao;
-		""",conn)
-	result
-
+  
   	# Contagem de Negociações por Tipo de Pagamento:
- 	result = pd.read_sql_query("""
 		SELECT PAGAMENTO.tipo, COUNT(NEGOCIA.fk_pagamento) AS total_negociacoes
 		FROM PAGAMENTO INNER JOIN NEGOCIA ON PAGAMENTO.codigo = NEGOCIA.fk_pagamento
 		GROUP BY PAGAMENTO.tipo;
-		""",conn)
-	result
 
   	#Contagem de Agendamentos por Tipo de Imóvel e Data:
-	result = pd.read_sql_query("""
 		SELECT IMOVEL.tipo, AGENDAMENTO.data AS Data_Marcada, COUNT(AGENDAMENTO.fk_Imovel) AS total_agendamentos
 		FROM AGENDAMENTO INNER JOIN IMOVEL ON AGENDAMENTO.fk_Imovel = IMOVEL.codigo
 		GROUP BY IMOVEL.tipo, AGENDAMENTO.data;
-		""",conn)
-	result
 
 	#Contagem de Pessoas (Corretores e Clientes):
- 	result = pd.read_sql_query("""SELECT 'Total Pessoas' AS Categoria,
+ 		SELECT 'Total Pessoas' AS Categoria,
 		    CASE
 		        WHEN fk_Pessoa IN (SELECT fk_Pessoa FROM CORRETOR) THEN 'Corretor'
 		        WHEN fk_Pessoa IN (SELECT fk_Pessoa FROM CLIENTE) THEN 'Cliente'
@@ -633,11 +580,8 @@ Vamos lá!
 		    ) AS Pessoas
 		GROUP BY
 		    Tipo_Pessoa;
-		""",conn)
-	result
  
 	# Contagem de Imóveis com Piscina por Tipo:
-	 result = pd.read_sql_query("""
 		SELECT
 		    IMOVEL.tipo AS Tipo_Imovel,
 		    COUNT(IMOVEL.codigo) AS total_imoveis_com_piscina
@@ -650,19 +594,118 @@ Vamos lá!
 		    IMOVEL.tipo
 		ORDER BY
 		    Tipo_Imovel;
-		""",conn)
-	result
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
     a) Criar minimo 1 de cada tipo
+	# Listar todos os clientes e seus respectivos imóveis negociados, incluindo aqueles sem negociações:
+		SELECT CLIENTE.cpf, IMOVEL.tipo
+		FROM CLIENTE
+		LEFT JOIN NEGOCIA ON CLIENTE.fk_Pessoa = NEGOCIA.fk_cliente
+		LEFT JOIN IMOVEL ON NEGOCIA.fk_imovel = IMOVEL.codigo;
 
+	# Listar todas as pessoas e seus contatos, incluindo aquelas sem contatos associados:
+		SELECT PESSOA.nome, CONTATO.email
+		FROM CONTATO
+		RIGHT JOIN PESSOA_CONTATO ON CONTATO.codigo = PESSOA_CONTATO.fk_contato
+		RIGHT JOIN PESSOA ON PESSOA_CONTATO.fk_pessoa = PESSOA.codigo;
+
+	# Listar todas as infraestruturas e os imóveis que as possuem, incluindo aquelas sem correspondência:
+		SELECT INFRAESTRUTURA.propriedade, IMOVEL.tipo
+		FROM INFRAESTRUTURA
+		FULL JOIN POSSUI ON INFRAESTRUTURA.codigo = POSSUI.fk_infraestrutura
+		FULL JOIN IMOVEL ON POSSUI.fk_imovel = IMOVEL.codigo;
+
+	# Listar todos os corretores e seus respectivos clientes, incluindo aqueles sem clientes associados:
+		SELECT CORRETOR.creci, PESSOA.nome AS cliente_nome
+		FROM CORRETOR
+		LEFT JOIN NEGOCIA ON CORRETOR.fk_Pessoa = NEGOCIA.fk_corretor
+		LEFT JOIN CLIENTE ON NEGOCIA.fk_cliente = CLIENTE.fk_Pessoa
+		LEFT JOIN PESSOA ON CLIENTE.fk_Pessoa = PESSOA.codigo;
+  
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
         a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
+	# Consulta de um cliente com diferentes negociações e diferentes corretores
+		SELECT
+		    n1.fk_cliente AS cliente,
+		    n1.fk_corretor AS corretor,
+		    n1.fk_imovel AS imovel,
+		    n1.fk_pagamento AS pagamento,
+		    n1.data AS data
+		FROM
+		    NEGOCIA n1
+		JOIN
+		    NEGOCIA n2 ON n1.fk_cliente = n2.fk_cliente AND n1.fk_corretor <> n2.fk_corretor
+		WHERE
+		    n1.fk_cliente < n2.fk_corretor;
+      
         b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+	# Imóveis à venda com suas Infraestruturas
+		CREATE VIEW ImovelInfraView AS
+		SELECT i.codigo AS ImovelCodigo, i.tipo, i.endereco, i.preco, i.condicao, inf.propriedade
+		FROM IMOVEL i
+		JOIN POSSUI p ON i.codigo = p.fk_imovel
+		JOIN INFRAESTRUTURA inf ON p.fk_infraestrutura = inf.codigo
+		WHERE i.condicao = 'A venda';
+		
+		SELECT * FROM ImovelInfraView;
 
+  	# Imóveis com Detalhes de Negociação:
+		CREATE VIEW ImoveisNegociacaoView AS
+		SELECT i.codigo AS ImovelCodigo, i.tipo AS ImovelTipo, i.endereco AS ImovelEndereco, n.data AS DataNegociacao, p.tipo AS PagamentoTipo
+		FROM NEGOCIA n
+		JOIN IMOVEL i ON n.fk_imovel = i.codigo
+		JOIN PAGAMENTO p ON n.fk_pagamento = p.codigo;
+		
+		SELECT * FROM ImoveisNegociacaoView;
+
+	# Pagamentos por Tipo e Valor:
+		CREATE VIEW PagamentosTipoValorView AS
+		SELECT p.tipo AS PagamentoTipo, n.data AS DataNegociacao, i.tipo AS ImovelTipo, n.fk_imovel AS ImovelCodigo, i.preco AS ValorImovel
+		FROM NEGOCIA n
+		JOIN PAGAMENTO p ON n.fk_pagamento = p.codigo
+		JOIN IMOVEL i ON n.fk_imovel = i.codigo;
+		
+		SELECT * FROM PagamentosTipoValorView;
+
+	# Imóveis com suas Infraestruturas e Quantidades
+		CREATE VIEW ImovelInfraQuantidadeView AS
+		SELECT i.codigo AS ImovelCodigo, i.tipo, inf.propriedade, p.qtd
+		FROM IMOVEL i
+		JOIN POSSUI p ON i.codigo = p.fk_imovel
+		JOIN INFRAESTRUTURA inf ON p.fk_infraestrutura = inf.codigo;
+		
+		SELECT * FROM ImovelInfraQuantidadeView;
+
+	# Imóveis com Maior Quantidade de Infraestrutura:
+		CREATE VIEW ImoveisMaiorQuantidadeInfraView AS
+		SELECT i.codigo AS ImovelCodigo, i.tipo AS ImovelTipo, MAX(pos.qtd) AS MaiorQuantidadeInfra
+		FROM IMOVEL i
+		LEFT JOIN POSSUI pos ON i.codigo = pos.fk_imovel
+		GROUP BY i.codigo, i.tipo;
+		
+		SELECT * FROM ImoveisMaiorQuantidadeInfraView;
+  
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
+	# Média de Preços dos Imóveis por Tipo
+		SELECT tipo, AVG(preco) AS media_preco
+		FROM IMOVEL
+		GROUP BY tipo;
+
+	# Clientes que realizaram mais de um agendamento.
+		SELECT fk_Cliente
+		FROM AGENDAMENTO
+		GROUP BY fk_Cliente
+		HAVING COUNT(*) > 1;
+
+	# Corretor com o menor número de agendamentos:
+		SELECT fk_Pessoa, creci
+		FROM CORRETOR
+		WHERE creci = (SELECT creci FROM CORRETOR ORDER BY (SELECT COUNT(*) FROM AGENDAMENTO WHERE fk_Corretor = CORRETOR.fk_Pessoa) ASC LIMIT 1);
+
+	# imóveis que possuem pelo menos 3 infraestruturas:
+		SELECT codigo, endereco
+		FROM IMOVEL
+		WHERE codigo IN (SELECT fk_imovel FROM POSSUI GROUP BY fk_imovel HAVING COUNT(fk_infraestrutura) >= 3);
 
 ># Marco de Entrega 03: Do item 9.2 até o ítem 9.10 (10 PTS)<br>
 
