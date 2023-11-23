@@ -446,28 +446,20 @@ Vamos lá!
   	# Pessoas com nome contendo 'a':
    	SELECT * FROM PESSOA WHERE nome LIKE '%a%';
     
-    	# extrai o numrero correspondente ao dia da semana cotando a partir de 0 - domingo
+	# extrai o numrero correspondente ao dia da semana cotando a partir de 0 - domingo
      	SELECT EXTRACT(DOW FROM data) AS dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-16'
       
 	# extrai o nome correspondente ao dia da semana cotando a partir de 0 - domingo
 	SELECT TO_CHAR(data, 'Day') AS nome_dia_semana_negocia FROM NEGOCIA WHERE data = '2023-11-18'
 
  	# Extrai os dias da semana de todos os agendamentos
-	SELECT fk_imovel, fk_cliente, fk_corretor, EXTRACT(DOW FROM data) AS dia_semana 	FROM AGENDAMENTO
+	SELECT fk_imovel, fk_cliente, fk_corretor, EXTRACT(DOW FROM data) AS dia_semana FROM AGENDAMENTO
  
 	# seleciona linhas que contem a data 2023-11-17 
 	SELECT * FROM AGENDAMENTO WHERE data = '2023-11-17'
  
  	# Pessoas que nasceram no mes 8 (Agosto)
         SELECT * FROM PESSOA WHERE EXTRACT(MONTH FROM dt_nasc) = 8
-
-
- 
- 
-
-
-    b) Criar uma consulta para cada tipo de função data apresentada.
-    
 
 
 
