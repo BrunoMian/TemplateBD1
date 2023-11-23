@@ -27,24 +27,24 @@ Essa abordagem inovadora traz transparência, praticidade e eficiência para o p
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes?
 	* Informações detalhadas sobre as propriedades disponíveis, incluindo preço, localização, características do imóvel, metragem, número de quartos, banheiros, etc.
  
-	* Informações sobre opções de financiamento e cálculos de pagamento, como parcelas mensais, entrada, taxa de juros, prazos, etc.
+	* Formas de pagamento para a compra do imovel.
  
 	* Disponibilidade de visitas às propriedades, incluindo datas e horários disponíveis.
- 
-	* Histórico de preços de imóveis na área desejada.
  
 	* Avaliação de mercado de uma propriedade.
  
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
-	* Relatório de Propriedades Disponíveis: Lista de todas as propriedades que atendem aos critérios de pesquisa do cliente, incluindo detalhes como preço, localização, metragem e características do imóvel.
 	
-	* Relatório de Opções de Financiamento: Um resumo das opções de financiamento disponíveis para as propriedades de interesse, incluindo cálculos de pagamento mensal, entrada, taxa de juros e prazos.
+ 	* Relatório que mostra a quantidade de ímoveis no qual estão diponíveis e a quantidade dos que ja foram negociado: Mostra a relação grafica entre a quantidade de 	imoveis disponiveis e não disponiveis para a venda.
+
+	* Relatório da quantidade de Agendamentos por Corretor: Relatório que detalha o número de agendamentos realizados por cada corretor, fornecendo uma visão clara da 	distribuição da carga de trabalho.
+    
+	* Relatório dos métodos de Pagamento e Percentuais de Utilização: Apresentação dos métodos de pagamento utilizados, acompanhados das respectivas porcentagens de 	utilização.
 	
-	* Relatório de Disponibilidade de Visitas: Uma lista de datas e horários disponíveis para visitas às propriedades selecionadas, permitindo que o cliente agende visitas de maneira conveniente.
+ 	* Relatório relação entre Preço do Imóvel e Quantidade de Quartos: Análise estatística que explora se o preço dos imóveis está diretamente proporcional à quantidade de 	quartos.
+
+ 	* Relatório de negociações: Mostrar quantos clientes já negociaram um imovel e quantos não negociaram para saber o efetividade do sistema.
 	
-	* Relatório de Histórico de Preços: Um histórico de preços de imóveis na área desejada, mostrando tendências de preços ao longo do tempo.
-	
-	* Relatório de Avaliação de Mercado: Uma avaliação do valor de mercado de uma propriedade específica, com base em fatores como localização, tamanho, condição e comparação com propriedades semelhantes na região
 
     
 ### 5.MODELO CONCEITUAL<br>
