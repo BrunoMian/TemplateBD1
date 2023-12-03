@@ -338,7 +338,10 @@ Vamos lá!
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
+	#Consultas
     https://colab.research.google.com/drive/1uyCQHk16mCX3FwYYE9oBz0srjMWgMNf_?usp=sharing
+	#Relatorios
+    https://colab.research.google.com/drive/1YyR4bkniCntBOMKRM5kwv2ue7QwlGk85?pli=1
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 	# Inserir dados na tabela PESSOA
 	Select * from PESSOA
